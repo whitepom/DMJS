@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutHeader"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,8 +21,8 @@
             android:id="@+id/imgBack"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:src="@drawable/back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +31,7 @@
         <TextView
             style="@style/BaseHeader"
             android:text="활전복 입고일괄 등록"
+            android:textSize="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,25 +64,68 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layoutOptions"
                 android:layout_width="0dp"
-                android:layout_height="32dp"
+                android:layout_height="65dp"
                 android:layout_marginTop="4dp"
                 app:layout_constraintEnd_toEndOf="@+id/layoutInput2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/layoutInput2"
                 app:layout_constraintTop_toBottomOf="@+id/layoutInput2">
 
-                <ImageView
+                <Button
                     android:id="@+id/addNggk07"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    style="@style/BaseButton"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
                     android:layout_marginStart="5dp"
-                    android:background="@drawable/shape_round5_add_employee"
-                    android:padding="6dp"
-                    android:src="@drawable/add_employee"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvWarehouseNum1"
-                    app:layout_constraintEnd_toStartOf="@+id/btnSave"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/nggk07"
+                    android:text="수조검색"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/nggk07"
+                    app:layout_constraintStart_toEndOf="@+id/nggk04"
+                    app:layout_constraintTop_toTopOf="@+id/nggk07"
+                    app:layout_constraintVertical_bias="0.50" />
+
+                <Button
+                    android:id="@+id/addNggk04"
+                    style="@style/BaseButton"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="5dp"
+                    android:text="일괄적용"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/nggk04"
+                    app:layout_constraintStart_toEndOf="@+id/nggk04"
+                    app:layout_constraintTop_toTopOf="@+id/nggk04" />
+
+                <EditText
+                    android:id="@+id/nggk04"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:maxLength="500"
+                    android:maxLines="10"
+                    android:minHeight="36dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvWarehouse2"
+                    app:layout_constraintStart_toEndOf="@+id/tvWarehouse2"
+                    app:layout_constraintTop_toTopOf="@+id/tvWarehouse2" />
+
+                <TextView
+                    android:id="@+id/tvWarehouse2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="중량"
+                    android:textColor="#616161"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.constraintlayout.widget.Barrier
@@ -94,42 +138,44 @@
                 <Button
                     android:id="@+id/btnSave"
                     style="@style/BaseButton"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
                     android:layout_marginEnd="4dp"
-                    android:text="일괄입고처리"
+                    android:background="#43A33D"
+                    android:text="일괄처리"
                     android:textSize="14sp"
                     android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/addNggk04"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="@+id/addNggk04" />
 
                 <TextView
                     android:id="@+id/tvWarehouse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="수조위치"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:text="수조"
                     android:textColor="#616161"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/nggk07"
+                    android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.49" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvWarehouse2" />
 
                 <TextView
                     android:id="@+id/nggk07"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
 
-                    android:layout_marginStart="4dp"
+                    android:layout_marginStart="5dp"
                     android:background="@drawable/shape_round5_border1"
                     android:gravity="center_vertical"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
                     android:textColor="#616161"
                     android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvWarehouse"
                     app:layout_constraintStart_toEndOf="@+id/tvWarehouse"
-                    tools:layout_editor_absoluteY="0dp"
+                    app:layout_constraintTop_toTopOf="@+id/tvWarehouse"
                     tools:text=" " />
 
 
@@ -158,7 +204,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:gravity="center"
-                    android:text="입고목록"
+                    android:text="활전복 입고목록"
                     android:textColor="#4574be"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -182,12 +228,13 @@
                 android:id="@+id/layoutInput2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/shape_round10_white"
                 android:elevation="3dp"
                 android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 

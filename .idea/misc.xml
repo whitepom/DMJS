@@ -255,7 +255,7 @@
         <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/activity_ngm04_main_detail.xml" value="0.5" />
         <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/activity_ngm04_main_filter.xml" value="0.3854166666666667" />
         <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/activity_ngm04_main_update.xml" value="0.5" />
-        <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/activity_ngm05_main.xml" value="0.4" />
+        <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/activity_ngm05_main.xml" value="0.9" />
         <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/activity_odm02_main.xml" value="0.3302083333333333" />
         <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/activity_odm03_add.xml" value="0.4036458333333333" />
         <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/activity_odm03_main.xml" value="0.4963768115942029" />
@@ -287,7 +287,7 @@
         <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/activity_zag05_scan_main.xml" value="0.5" />
         <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/item_ngm04_main_detail_list.xml" value="0.67" />
         <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/item_ngm04_main_list.xml" value="0.75" />
-        <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/item_ngm05_main_list.xml" value="0.4" />
+        <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/item_ngm05_main_list.xml" value="0.75" />
         <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/item_odm02_main_list.xml" value="0.3302083333333333" />
         <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/item_odm03_main_list.xml" value="0.4963768115942029" />
         <entry key="..\:/Android/DMJS_9/app/src/main/res/layout/item_odm_scan_main_list.xml" value="0.32447916666666665" />

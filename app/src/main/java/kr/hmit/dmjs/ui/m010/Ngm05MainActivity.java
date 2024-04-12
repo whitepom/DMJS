@@ -126,7 +126,13 @@ public class Ngm05MainActivity extends BaseActivity {
         binding.imgBack.setOnClickListener(v -> finish());
         binding.btnSave.setOnClickListener(this::onClickSave);
 
+
+        binding.addNggk04.setOnClickListener(this::onClickBatchNggk04);
+        binding.nggk04.setText("0");
+
         binding.addNggk07.setOnClickListener(v -> onClickCombo((View) v , items , "1"));
+
+
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false));
 
         mAdapter = new Ngm05MainListAdapter();
@@ -261,6 +267,13 @@ public class Ngm05MainActivity extends BaseActivity {
         mAdapter.setNggkList(data);
     }
 
+    private void onClickBatchNggk04(View view){
+
+        for (int i = 0; i < mList.size(); i++) {
+            mAdapter.SetAll(Double.parseDouble(binding.nggk04.getText().toString()));
+        }
+    }
+
     private void onClickSave(View view) {
 
         ArrayList<NGGK_VO> mListCheck = mAdapter.getCheckList();
@@ -287,7 +300,7 @@ public class Ngm05MainActivity extends BaseActivity {
 
         openLoadingBar();
 
-        paramMap = setParamMap("ODD_ID", "M_UPDATE_TEST");
+        paramMap = setParamMap("NGGK_ID", "M_UPDATE_TEST");
 
         paramMap.put("NGGK_01", vo.NGGK_01);
         paramMap.put("NGGK_02", vo.NGGK_02);
@@ -295,6 +308,7 @@ public class Ngm05MainActivity extends BaseActivity {
         paramMap.put("NGGK_04", vo.NGGK_04);
         paramMap.put("NGGK_05", vo.NGGK_05);
         paramMap.put("NGGK_06", vo.NGGK_06);
+        paramMap.put("NGGK_07", binding.nggk07.getText().toString());
         paramMap.put("NGGK_08", vo.NGGK_08);
         paramMap.put("NGGK_09", vo.NGGK_09);
         paramMap.put("NGGK_10", vo.NGGK_10);
@@ -357,6 +371,8 @@ public class Ngm05MainActivity extends BaseActivity {
 
                         if(!mDecodeResult.toString().contains("READ_FAIL")){
                             //스캔 데이터 저정
+                            binding.nggk04.setText("0");
+                            binding.nggk07.setText("");
                             NGG_Read(mDecodeResult.toString());
                         }
                     } else if (ScanConst.INTENT_EVENT.equals(intent.getAction())) {
@@ -469,4 +485,6 @@ public class Ngm05MainActivity extends BaseActivity {
         mScanner = null;
         super.onDestroy();
     }
+
+
 }

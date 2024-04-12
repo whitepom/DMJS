@@ -37,5 +37,7 @@ public class NGGK_VO implements Serializable{
 
     public String  ERROR_MSG;
 
+    public long finalHolderId;
+
 
 }

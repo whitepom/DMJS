@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import kr.hmit.dmjs.R;
 import kr.hmit.dmjs.databinding.ItemNgm04MainListBinding;
 import kr.hmit.dmjs.databinding.ItemNgm05MainListBinding;
 import kr.hmit.dmjs.model.vo.NGGK_VO;
@@ -27,6 +28,7 @@ public class Ngm05MainListAdapter extends RecyclerView.Adapter{
     private HashMap<String, Object> paramMap = new HashMap<String, Object>();
 
     private  ViewHolder finalHolder = null;
+
     private NGM_VO vo = null;
     @NonNull
     @Override
@@ -41,8 +43,9 @@ public class Ngm05MainListAdapter extends RecyclerView.Adapter{
         ViewHolder finalHolder = (ViewHolder) holder;
 
         finalHolder.binding.nggk02.setText(vo.NGGK_02);
+        finalHolder.binding.nggk07.setText(vo.NGGK_02);
+        finalHolder.binding.nggk07.setText(vo.NGGK_08);
         finalHolder.binding.nggk04.setText(String.valueOf(vo.NGGK_04));
-
 
         finalHolder.binding.nggk04.addTextChangedListener(new TextWatcher() {
             @Override
@@ -58,6 +61,8 @@ public class Ngm05MainListAdapter extends RecyclerView.Adapter{
             public void afterTextChanged(Editable s) {
                 String tempStr = finalHolder.binding.nggk04.getText().toString();
                 int tempIndex = mList.indexOf(vo);
+
+                System.out.println(tempStr);
 
                 if (tempStr.equals("")) {
                     vo.NGGK_04= 0;
@@ -113,10 +118,20 @@ public class Ngm05MainListAdapter extends RecyclerView.Adapter{
         return mListCheck;
     }
 
+    public void SetAll(double Nggk04) {
+
+        for(NGGK_VO vo : mList){
+            vo.NGGK_04 = Nggk04;
+        }
+
+        notifyDataSetChanged();
+    }
+
     //ItemClick Event
     public interface OnItemClickListener {
         void onItemClick(View view, int position);
     }
+
     private OnItemClickListener onItemClickListener;
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
