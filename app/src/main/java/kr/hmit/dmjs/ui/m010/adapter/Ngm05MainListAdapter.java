@@ -46,8 +46,6 @@ public class Ngm05MainListAdapter extends RecyclerView.Adapter{
         finalHolder.binding.nggk07.setText(vo.NGGK_07);
         finalHolder.binding.nggk08.setText(vo.NGGK_08);
         finalHolder.binding.nggk04.setText(String.valueOf(vo.NGGK_04));
-
-
     }
 
     @Override
