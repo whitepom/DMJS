@@ -47,37 +47,7 @@ public class Ngm05MainListAdapter extends RecyclerView.Adapter{
         finalHolder.binding.nggk08.setText(vo.NGGK_08);
         finalHolder.binding.nggk04.setText(String.valueOf(vo.NGGK_04));
 
-        finalHolder.binding.nggk04.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                String tempStr = s.toString();
-
-                System.out.println("tempStr :" + tempStr);
-                System.out.println("position :" + position);
-
-                if (tempStr.equals("")) {
-                    vo.NGGK_04= 0;
-                }else if (Double.parseDouble(tempStr)==0) {
-                    vo.NGGK_04= 0 ;
-                }else {
-                    vo.NGGK_04= Double.parseDouble(tempStr);
-                }
-
-                if(position >=0 ){
-                    mList.set(position , vo);
-                }
-
-            }
-        });
     }
 
     @Override
