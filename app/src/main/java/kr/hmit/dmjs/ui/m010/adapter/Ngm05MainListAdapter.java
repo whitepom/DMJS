@@ -43,8 +43,8 @@ public class Ngm05MainListAdapter extends RecyclerView.Adapter{
         ViewHolder finalHolder = (ViewHolder) holder;
 
         finalHolder.binding.nggk02.setText(vo.NGGK_02);
-        finalHolder.binding.nggk07.setText(vo.NGGK_02);
-        finalHolder.binding.nggk07.setText(vo.NGGK_08);
+        finalHolder.binding.nggk07.setText(vo.NGGK_07);
+        finalHolder.binding.nggk08.setText(vo.NGGK_08);
         finalHolder.binding.nggk04.setText(String.valueOf(vo.NGGK_04));
 
         finalHolder.binding.nggk04.addTextChangedListener(new TextWatcher() {
