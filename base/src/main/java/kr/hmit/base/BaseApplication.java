@@ -17,6 +17,7 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         baseApplication = this;
+
     }
 
     public void openLoading(Activity activity, String message) {
