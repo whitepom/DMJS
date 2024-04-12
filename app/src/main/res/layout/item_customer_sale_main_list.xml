@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textCLT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+
+        android:text="성       명"
+        android:textColor="#9e9e9e"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- 발주일자 text -->
+
+    <TextView
+        android:id="@+id/tvCLT"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#4574be"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textCLT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvCLT08"
+        app:layout_constraintTop_toTopOf="@+id/textCLT"
+        tools:text="거래처명" />
+
+
+    <TextView
+        android:id="@+id/tvCLT08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="#9e9e9e"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textCLT08"
+        app:layout_constraintStart_toEndOf="@+id/textCLT08"
+        app:layout_constraintTop_toTopOf="@+id/textCLT08"
+        tools:text="010-1234-5678" />
+
+
+    <TextView
+        android:id="@+id/textCLT08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="전화번호"
+        android:textColor="#9e9e9e"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="@+id/textCLT"
+        app:layout_constraintTop_toBottomOf="@+id/textCLT" />
+
+
+    <TextView
+        android:id="@+id/tvCLT13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="#9e9e9e"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textCLT13"
+        app:layout_constraintStart_toEndOf="@+id/textCLT13"
+        app:layout_constraintTop_toTopOf="@+id/textCLT13"
+        tools:text="010-1234-5678" />
+
+
+    <TextView
+        android:id="@+id/textCLT13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:text="휴대전화"
+        android:textColor="#9e9e9e"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCLT08"
+        app:layout_constraintStart_toEndOf="@+id/textCLT08"
+        app:layout_constraintTop_toTopOf="@+id/tvCLT08" />
+
+    <TextView
+        android:id="@+id/tvCLT06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="#9e9e9e"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textCLT06"
+        app:layout_constraintStart_toEndOf="@+id/textCLT06"
+        app:layout_constraintTop_toTopOf="@+id/textCLT06"
+        tools:text="자사싸이트" />
+
+
+    <TextView
+        android:id="@+id/textCLT06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="주문경로"
+        android:textColor="#9e9e9e"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="@+id/textCLT08"
+        app:layout_constraintTop_toBottomOf="@+id/textCLT08" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

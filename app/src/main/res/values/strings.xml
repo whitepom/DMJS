@@ -1,0 +1,48 @@
+<resources>
+    <string name="intro_0">권한 설정</string>
+    <string name="intro_1">권한을 허용하지 않으면 앱을 사용할 수 없습니다.</string>
+
+    <string name="login_0">회사코드를 입력해주세요</string>
+    <string name="login_1">아이디를 입력해주세요</string>
+    <string name="login_2">비밀번호를 입력해주세요</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="find_employee_0">담당자 찾기</string>
+    <string name="find_employee_1">담당자</string>
+    <string name="find_employee_2">직급</string>
+    <string name="find_employee_3">선택</string>
+    <string name="find_employee_4">추가</string>
+    <string name="find_employee_5">담당자는 최대 5명까지 지정할 수 있습니다.</string>
+    <string name="find_employee_6"></string>
+
+
+    <string name="write_work_0">직접입력</string>
+    <string name="write_work_1">업무분류</string>
+    <string name="write_work_2"></string>
+    <string name="write_work_3"></string>
+    <string name="write_work_4"></string>
+    <string name="write_work_5"></string>
+    <string name="write_work_6"></string>
+    <string name="write_work_7"></string>
+    <string name="write_work_8"></string>
+    <string name="write_work_9"></string>
+    <string name="addWork">항목을 채워주세요</string>
+
+
+    <string-array name="LAN">
+        <item>업무내용</item>
+        <item>담당자</item>
+        <item>요청자</item>
+    </string-array>
+
+    <string name="week_sun">일</string>
+    <string name="week_mon">월</string>
+    <string name="week_tue">화</string>
+    <string name="week_wed">수</string>
+    <string name="week_thu">목</string>
+    <string name="week_fri">금</string>
+    <string name="week_sat">토</string>
+
+</resources>

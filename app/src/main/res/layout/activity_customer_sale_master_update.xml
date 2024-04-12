@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.worker_code.AddWorkerCodeActivity">
+
+    <!-- region header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/BaseHeader"
+            android:text="고객정보 상세"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgWriteWork"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/edit"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#9e9e9e"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- endregion -->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f5f8"
+            android:paddingBottom="24dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/shape_round10_white"
+                android:elevation="3dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <!--region 거래처코드-->
+
+
+
+
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="textCLT29,tvTextItem3,tvTextItem4,tvTextItem5,tvTextItem6,tvTextItem8,tvTextItem9,tvTextItem10,tvTextItem11"
+                    tools:layout_editor_absoluteX="87dp" />
+
+                <!--endregion 거래처코드-->
+
+                <!--region 거래구분-->
+
+                <TextView
+                    android:id="@+id/textCLT29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="거래구분"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCLT29"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvCLT29" />
+
+
+                <!--endregion 거래구분 -->
+                <!--고객구분-->
+                <TextView
+                    android:id="@+id/textCLT07"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="고객구분"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCLT07"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvCLT07" />
+
+                <EditText
+                    android:id="@+id/tvCLT07"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+
+                    android:hint="고객구분을 입력하세요."
+                    android:maxLength="50"
+                    android:maxLines="1"
+
+                    android:textColorHint="#e9e9e9"
+                    android:background="@drawable/shape_round5_border1"
+
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCLT29" />
+                <!--region 상호-->
+
+                <TextView
+                    android:id="@+id/tvTextItem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="성명"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCLT02"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvCLT02" />
+
+                <EditText
+                    android:id="@+id/tvCLT02"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:hint="성명을 입력하세요."
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    android:textColorHint="#e9e9e9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCLT07" />
+
+                <!--endregion 상호-->
+
+                <!--region 주문경로-->
+
+                <TextView
+                    android:id="@+id/tvTextItem4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="주문경로"
+                    android:textColor="#616161"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCLT06"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvCLT06" />
+
+                <EditText
+                    android:id="@+id/tvCLT06"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:hint="주문경로를 입력하세요."
+                    android:maxLength="50"
+                    android:textColorHint="#e9e9e9"
+                    android:maxLines="1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCLT02" />
+
+                <!--endregion 상호-->
+
+                <!--region 대표자명-->
+
+                <TextView
+                    android:id="@+id/tvTextItem5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="전화번호"
+                    android:textColor="#616161"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCLT08"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvCLT08" />
+
+                <EditText
+                    android:id="@+id/tvCLT08"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:inputType="number"
+                    android:background="@drawable/shape_round5_border1"
+                    android:hint="전화번호를 입력하세요."
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:textColorHint="#e9e9e9"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCLT06" />
+
+                <!--endregion 대표자명-->
+
+                <!--region 업태-->
+
+                <TextView
+                    android:id="@+id/tvTextItem6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="휴대전화"
+                    android:textColor="#616161"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCLT13"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvCLT13" />
+
+                <EditText
+                    android:id="@+id/tvCLT13"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:hint="휴대전화를 입력하세요."
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:inputType="number"
+                    android:textColorHint="#e9e9e9"
+                    android:singleLine="true"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCLT08" />
+
+                <!--endregion 업태-->
+
+                <!--region 종목-->
+
+                <!--endregion 종목-->
+
+                <!--region 주소-->
+                <EditText
+                    android:id="@+id/tvTextItem8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="주소"
+                    android:textColor="#616161"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvClientPostalCode"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvClientPostalCode" />
+
+                <EditText
+                    android:id="@+id/tvClientPostalCode"
+                    android:layout_width="100dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:inputType="number"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    android:textColorHint="#e9e9e9"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCLT13"
+                    android:hint="000-000" />
+
+                <TextView
+                    android:id="@+id/addClientAddress"
+                    android:layout_width="80dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/shape_round5_add_employee"
+                    android:gravity="center"
+                    android:text="주소검색"
+                    android:textColor="#ffffff"
+                    app:layout_constraintStart_toEndOf="@+id/tvClientPostalCode"
+                    app:layout_constraintTop_toTopOf="@+id/tvClientPostalCode" />
+
+                <EditText
+                    android:id="@+id/tvClientAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    android:textColorHint="#e9e9e9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/tvClientPostalCode"
+                    android:hint="일반주소" />
+
+                <EditText
+                    android:id="@+id/etClientAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:hint="상세주소를 입력하세요."
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:textColor="#616161"
+                    android:textColorHint="#e9e9e9"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/tvClientAddress" />
+
+                <!--endregion 주소-->
+
+                <!--region 전화번호-->
+
+                <TextView
+                    android:id="@+id/tvTextItem9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="계좌번호"
+                    android:textColor="#616161"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCLT20"
+                    app:layout_constraintTop_toTopOf="@+id/tvCLT20" />
+
+                <EditText
+                    android:id="@+id/tvCLT20"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:hint="계좌번호를 입력하세요."
+android:inputType="number"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:textColor="#616161"
+                    android:textColorHint="#e9e9e9"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+
+                    app:layout_constraintTop_toBottomOf="@+id/tvCLT19" />
+
+                <!--endregion 전화번호-->
+
+                <TextView
+                    android:id="@+id/textBank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="거래은행"
+                    android:textColor="#616161"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvCLT19"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCLT19"/>
+
+                <EditText
+                    android:id="@+id/tvCLT19"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:hint="거래은행을 입력하세요."
+
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    android:textColorHint="#e9e9e9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/etClientAddress" />
+                <!--region 팩스번호-->
+
+                <TextView
+                    android:id="@+id/tvTextItem10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="예금주"
+                    android:textColor="#616161"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCLT21"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvCLT21" />
+
+                <EditText
+                    android:id="@+id/tvCLT21"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:hint="예금주를 입력하세요."
+
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:paddingStart="8dp"
+                    android:textColorHint="#e9e9e9"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCLT20" />
+
+                <!--endregion 팩스번호-->
+
+                <!--region 마감일자-->
+
+
+
+                <!--endregion 마감일자-->
+
+
+                <!--region 거래은행-->
+
+                <!--endregion 거래은행-->
+
+                <!--region 예금주-->
+
+                <!--endregion 거래은행-->
+
+                <!--region 계좌번호-->
+
+                <!--endregion 계좌번호-->
+
+                <!--region 담당자-->
+
+                <!--endregion 담당자-->
+
+                <!--region 전자메일-->
+
+                <!--endregion 전자메일-->
+
+                <!--region 휴대전화-->
+
+                <!--endregion 담당자-->
+
+                <!--region 비고-->
+                \
+
+                <TextView
+                    android:id="@+id/tvCLT29"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round_border_readonly"
+                    android:drawableEnd="@drawable/dropdown"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="8dp"
+                    android:text="고객"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                <!--endregion 내용-->
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btnDelete"
+                style="@style/BaseButton2"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="삭제"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnUpdate"
+                app:layout_constraintTop_toBottomOf="@+id/layoutInput" />
+
+            <Button
+                android:id="@+id/btnUpdate"
+                style="@style/BaseButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="수정"
+                app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutInput" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

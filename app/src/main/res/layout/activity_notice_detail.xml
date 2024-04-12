@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.notice.NoticeDetailActivity">
+
+    <!-- region header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/BaseHeader"
+            android:text="공지사항 상세"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#9e9e9e"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- endregion -->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="-16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f2f5f8">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/shape_round10_white"
+                android:elevation="3dp"
+                android:paddingBottom="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!--region 요청일자-->
+
+                <!--endregion 요청일자-->
+
+                <!--region 분류-->
+
+                <!--endregion 분류-->
+
+                <!--region 업무내용-->
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="tvTextFile"
+                    tools:layout_editor_absoluteX="74dp" />
+
+                <TextView
+                    android:id="@+id/tvTextTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_vertical"
+                    android:text="제목"
+                    android:textColor="#616161"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:textColor="#616161"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/barrier"
+                    app:layout_constraintTop_toTopOf="@+id/tvTextTitle" />
+
+                <!--endregion 업무내용-->
+
+                <!--region 상세내용-->
+
+                <TextView
+                    android:id="@+id/tvTextContents"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:text="내용"
+                    android:textColor="#616161"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvTextTitle"
+                    app:layout_constraintStart_toStartOf="@+id/tvTextTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTextTitle" />
+
+                <EditText
+                    android:id="@+id/etContents"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:gravity="top"
+                    android:maxLength="1000"
+                    android:padding="8dp"
+                    android:textColor="#616161"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/etTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tvTextContents" />
+
+                <!--endregion 상세내용-->
+
+                <!--region 담당자-->
+
+                <TextView
+                    android:id="@+id/tvTextFile"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:visibility="invisible"
+                    android:text="           "
+                    android:textColor="#616161"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/tvTextContents"
+                    app:layout_constraintTop_toBottomOf="@+id/etContents" />
+
+                <!--endregion 담당자-->
+
+                <!--region 담당자 리스트 title -->
+
+                <!--endregion 담당자 리스트 title -->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btnUpdate"
+                style="@style/BaseButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="수정"
+                app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutInput" />
+
+            <Button
+                android:id="@+id/btnDelete"
+                style="@style/BaseButton2"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="삭제"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnUpdate"
+                app:layout_constraintTop_toBottomOf="@+id/layoutInput" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

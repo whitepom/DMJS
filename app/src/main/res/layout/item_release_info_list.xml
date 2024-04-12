@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/tvRUN01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="nO.주문번호" />
+    <TextView
+        android:id="@+id/tvRUN13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13dp"
+        android:textColor="#BF5353"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="도매" />
+
+    <TextView
+        android:id="@+id/textDAH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:layout_marginTop="12dp"
+        android:textColor="#9e9e9e"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRUN01"
+        android:text="출고처" />
+    <TextView
+        android:id="@+id/textDAH02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:layout_marginTop="8dp"
+        android:textColor="#9e9e9e"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDAH"
+        android:text="품    명" />
+
+
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:layout_marginTop="8dp"
+        android:textStyle="normal"
+        android:textColor="#9e9e9e"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRUN01"
+        android:text="출고수량" />
+
+    <TextView
+        android:id="@+id/tvCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="3dp"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        android:textColor="@color/zxing_possible_result_points"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text1"
+        tools:text="0" />
+    <!--
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginEnd="5dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tvUnitPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvUnitPrice"
+            tools:text="단가 : " />
+
+
+        <TextView
+            android:id="@+id/tvUnitPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvProductName"
+            tools:text="12,000 원" />-->
+
+    <!--
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginEnd="5dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tvPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvPrice"
+            tools:text="금액 : " />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvCLT"
+            tools:text="1,5000,000 원" />
+
+    -->
+
+    <TextView
+        android:id="@+id/tvCLT02"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:maxLines="1"
+        android:layout_marginStart="16dp"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:maxLength="15"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@+id/textDAH"
+        app:layout_constraintBottom_toBottomOf="@id/textDAH"
+        app:layout_constraintTop_toTopOf="@+id/textDAH"
+        tools:text="출고처" />
+
+
+
+    <TextView
+        android:id="@+id/tvDAH02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="14dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/textDAH02"
+        app:layout_constraintBottom_toBottomOf="@+id/textDAH02"
+        app:layout_constraintStart_toStartOf="@+id/tvCLT02"
+        tools:text="전복8미" />
+
+    <TextView
+        android:id="@+id/tvDAH01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        android:maxLines="1"
+        android:layout_marginStart="2dp"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/textDAH02"
+        app:layout_constraintBottom_toBottomOf="@+id/textDAH02"
+        app:layout_constraintStart_toEndOf="@+id/tvDAH02"
+        tools:text="" />
+
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="14dp"
+        android:maxLength="17"
+        android:ellipsize="end"
+        android:textStyle="normal"
+
+        app:layout_constraintTop_toTopOf="@+id/tvTextPrice"
+        app:layout_constraintStart_toStartOf="@+id/tvDAH02"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTextPrice"
+
+
+        tools:text="0 원" />
+
+
+    <!-- 발주일자 text -->
+
+    <TextView
+        android:id="@+id/tvTextPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="금    액"
+        android:layout_marginEnd="5dp"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/textDAH02"
+        />
+
+    <TextView
+        android:id="@+id/tvRunDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvPrice"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+        tools:text="YYYY-DD-MM" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

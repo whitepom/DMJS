@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/barrier"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:backgroundTint="@color/black"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5013193" />
+
+    <!--완료구분-->
+    <TextView
+        android:id="@+id/textDAH01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="품목코드"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDAH01"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvDAH01"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <!--endregion-->
+
+    <!--수율-->
+    <TextView
+        android:id="@+id/tvDAH01"
+        style="@style/textView_Content1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="#4574be"
+        android:textSize="14dp"
+        android:textStyle="bold"
+         app:layout_constraintStart_toEndOf="@id/textDAH01"
+        app:layout_constraintTop_toTopOf="@id/textDAH01"
+        tools:ignore="SpUsage"
+        tools:text="DAH_01" />
+
+    <!--투입원재료-->
+    <TextView
+        android:id="@+id/textCDO03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="제품분류"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="@+id/textDAH01"
+        app:layout_constraintStart_toStartOf="@id/textDAH01"
+        app:layout_constraintTop_toBottomOf="@+id/textDAH01"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/tvCDO03"
+        style="@style/textView_Content1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="@+id/tvDAH01"
+        app:layout_constraintTop_toTopOf="@+id/textCDO03"
+        tools:text="DAH_03" />
+
+    <!--작업설비-->
+    <TextView
+        android:id="@+id/textDAH02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="품  목  명"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+      app:layout_constraintTop_toTopOf="@+id/textDAH01"
+        app:layout_constraintBottom_toBottomOf="@+id/textDAH01"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/tvDAH02"
+        style="@style/textView_Content1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toEndOf="@+id/textDAH02"
+        app:layout_constraintTop_toTopOf="@+id/textDAH02"
+        tools:text="DAH_02" />
+
+    <TextView
+        android:id="@+id/textDAH14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="규        격"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+
+        app:layout_constraintStart_toStartOf="@+id/barrier"
+        app:layout_constraintTop_toTopOf="@+id/tvCDO03"
+
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/textOOS01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="이력번호"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="@+id/textDAH01"
+        app:layout_constraintStart_toStartOf="@+id/textDAH01"
+        app:layout_constraintTop_toBottomOf="@+id/textDAH14"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/tvDAH14"
+        style="@style/textView_Content1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="@+id/tvDAH02"
+        app:layout_constraintTop_toTopOf="@+id/textDAH14"
+        tools:text="DAH_14" />
+
+    <TextView
+        android:id="@+id/tvOOS01"
+        style="@style/textView_Content1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="@+id/tvCDO03"
+        app:layout_constraintTop_toTopOf="@+id/textOOS01"
+        tools:text="OOS_01" />
+
+    <TextView
+        android:id="@+id/textOOSDate"
+        style="@style/textView_Content1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/tvOOS01"
+        app:layout_constraintBottom_toBottomOf="@id/tvOOS01"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        android:text="이력일자" />
+
+
+    <TextView
+        android:id="@+id/tvOOK02"
+        style="@style/textView_Content1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="@+id/tvDAH14"
+        app:layout_constraintTop_toTopOf="@+id/textOOSDate"
+        tools:text="2023-11-03" />
+
+    <TextView
+        android:id="@+id/textOOK06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="입출구분"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="@+id/textDAH01"
+        app:layout_constraintStart_toStartOf="@+id/textDAH01"
+        app:layout_constraintTop_toBottomOf="@+id/textOOS01"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/tvOOK06"
+        style="@style/textView_Content1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="@+id/tvOOS01"
+        app:layout_constraintTop_toTopOf="@+id/textOOK06"
+        tools:text="출고" />
+
+
+    <TextView
+        android:id="@+id/textOOKSTC"
+        style="@style/textView_Content1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/tvOOK06"
+        app:layout_constraintBottom_toBottomOf="@id/tvOOK06"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        android:text="재       고" />
+
+
+    <TextView
+        android:id="@+id/tvOOKSTC"
+        style="@style/textView_Content1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#960019"
+        app:layout_constraintStart_toStartOf="@+id/tvDAH14"
+        app:layout_constraintTop_toTopOf="@+id/textOOKSTC"
+        tools:text="10" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

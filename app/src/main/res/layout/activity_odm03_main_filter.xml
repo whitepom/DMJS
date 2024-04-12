@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.worker_code.WorkerCodeFilterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!-- region header -->
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/BaseHeader"
+            android:text="입고현황 검색조건"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgWriteWork"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/edit"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#9e9e9e"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- endregion -->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#f2f5f8"
+        android:paddingBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_round10_white"
+            android:elevation="3dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <EditText
+                android:id="@+id/gem04"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/shape_round5_border1"
+                android:imeOptions="actionSearch"
+                android:maxLength="20"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:singleLine="true"
+                android:textColorHint="#616161"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="@+id/gem02Ed"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="@+id/gem02Ed"
+                app:layout_constraintTop_toBottomOf="@+id/gem02Ed"
+                tools:ignore="HardcodedText,SpUsage,TextFields" />
+
+            <TextView
+                android:id="@+id/gem02Ed"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_round5_border1"
+                android:drawableStart="@drawable/date"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/gem02St"
+                app:layout_constraintStart_toStartOf="@id/barrier"
+                app:layout_constraintTop_toBottomOf="@+id/gem02St" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="13dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text="~"
+                app:layout_constraintBottom_toBottomOf="@+id/gem02St"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/gem02St"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/gem02St"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/shape_round5_border1"
+                android:drawableStart="@drawable/date"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/textView11"
+                app:layout_constraintStart_toStartOf="@+id/barrier"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="tvTextFilter2"
+                tools:layout_editor_absoluteX="74dp" />
+
+
+            <!--region 입고처-->
+
+            <TextView
+                android:id="@+id/tvTextFilter2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="입고일자"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/gem02St"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/gem02St" />
+
+
+            <!--endregion 입고처-->
+
+            <!--region 품번-->
+
+            <TextView
+                android:id="@+id/tvTextFilter3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="입  고  처"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/gem04"
+                app:layout_constraintStart_toStartOf="@+id/tvTextFilter2"
+                app:layout_constraintTop_toTopOf="@+id/gem04" />
+
+            <!--endregion 품번-->
+
+            <!--region 품명-->
+
+            <!--endregion 품명-->
+
+            <!--region 규격-->
+
+            <!-- <TextView
+                android:id="@+id/tvTextFilter5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="규격"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvFilter5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvFilter5" />
+
+            <TextView
+                android:id="@+id/tvFilter5"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_round5_border1"
+                android:drawableEnd="@drawable/dropdown"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp"
+                android:text="전체"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/barrier"
+                app:layout_constraintTop_toBottomOf="@+id/tvFilter4" />-->
+
+            <!--endregion 규격-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            style="@style/BaseButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/common_save"
+            app:layout_constraintTop_toBottomOf="@+id/layoutInput" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

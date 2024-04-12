@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+    <!--총 재고 이력-->
+    <TextView
+        android:id="@+id/tvProductionPlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="No.LOT번호" />
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="yyyy-mm-dd" />
+
+    <!--분류 구분-->
+    <TextView
+        android:id="@+id/tvProductName"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/tvProductionPlan"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductionPlan"
+        tools:text="품목: " />
+
+    <TextView
+        android:id="@+id/tvProductNum"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/tvProductName"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductName"
+        tools:text="생산라인: " />
+
+    <TextView
+        android:id="@+id/tvWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/tvProductName"
+        app:layout_constraintTop_toTopOf="@+id/tvProductName"
+        android:text="계획시작:" />
+
+    <TextView
+        android:id="@+id/tvWorkType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/tvProductNum"
+        app:layout_constraintTop_toTopOf="@+id/tvProductNum"
+        android:text="계획종료: " />
+
+    <TextView
+        android:id="@+id/tvStockCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="0dp"
+        android:textColor="#4574be"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="0개" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

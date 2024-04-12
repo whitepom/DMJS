@@ -1,0 +1,84 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="kr.hmit.dmjs">
+
+    <application>
+        <activity
+            android:name=".ui.production_plan.ProductionDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.production_plan.ProductionAddActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.production_plan.ProductionPlanMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.schedule.ScheduleMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.sample.AddressActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.intro.IntroActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.main.MainDashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.find_employee.FindEmployeeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.work_management.WorkManagementMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.work_management.AddWorkActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.worker_code.WorkerCodeMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.worker_code.AddWorkerCodeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.worker_code.WorkerCodeFilterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.work_management.WorkManagementFilterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.product_info.ProductInfoMainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.stockStatus.StockStatusMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.stockStatus.StockStatusFilterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.qr_scan.StockstatusDialogActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.qr_scan.StockstatusDialog2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.management_note.ManagementNoteMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.management_note.ManagementNoteDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.management_note.ManagementNoteAddActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.management_note.ManagementNoteFilterActivity"
+            android:exported="true" />
+
+    </application>
+
+</manifest>

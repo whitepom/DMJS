@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/shape_round10_white"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 요일표시 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutWeek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:id="@+id/tvWeek0"
+            style="@style/calendar_week"
+            android:text="@string/week_sun"
+            android:textColor="#cd8798"
+            app:layout_constraintEnd_toStartOf="@+id/tvWeek1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWeek1"
+            style="@style/calendar_week"
+            android:text="@string/week_mon"
+            app:layout_constraintEnd_toStartOf="@+id/tvWeek2"
+            app:layout_constraintStart_toEndOf="@+id/tvWeek0"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWeek2"
+            style="@style/calendar_week"
+            android:text="@string/week_tue"
+            app:layout_constraintEnd_toStartOf="@+id/tvWeek3"
+            app:layout_constraintStart_toEndOf="@+id/tvWeek1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWeek3"
+            style="@style/calendar_week"
+            android:text="@string/week_wed"
+            app:layout_constraintEnd_toStartOf="@+id/tvWeek4"
+            app:layout_constraintStart_toEndOf="@+id/tvWeek2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWeek4"
+            style="@style/calendar_week"
+            android:text="@string/week_thu"
+            app:layout_constraintEnd_toStartOf="@+id/tvWeek5"
+            app:layout_constraintStart_toEndOf="@+id/tvWeek3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWeek5"
+            style="@style/calendar_week"
+            android:text="@string/week_fri"
+            app:layout_constraintEnd_toStartOf="@+id/tvWeek6"
+            app:layout_constraintStart_toEndOf="@+id/tvWeek4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWeek6"
+            style="@style/calendar_week"
+            android:text="@string/week_sat"
+            android:textColor="#839af3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvWeek5"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Week1 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay00"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay01"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay02"
+            app:layout_constraintStart_toEndOf="@+id/tvDay00"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay02"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay03"
+            app:layout_constraintStart_toEndOf="@+id/tvDay01"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay03"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay04"
+            app:layout_constraintStart_toEndOf="@+id/tvDay02"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay04"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay05"
+            app:layout_constraintStart_toEndOf="@+id/tvDay03"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay05"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay06"
+            app:layout_constraintStart_toEndOf="@+id/tvDay04"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay06"
+            style="@style/production_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDay05"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Week2 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay10"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay11"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay12"
+            app:layout_constraintStart_toEndOf="@+id/tvDay10"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay12"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay13"
+            app:layout_constraintStart_toEndOf="@+id/tvDay11"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay13"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay14"
+            app:layout_constraintStart_toEndOf="@+id/tvDay12"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay14"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay15"
+            app:layout_constraintStart_toEndOf="@+id/tvDay13"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay15"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay16"
+            app:layout_constraintStart_toEndOf="@+id/tvDay14"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay16"
+            style="@style/production_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDay15"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Week3 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay20"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay21"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay21"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay22"
+            app:layout_constraintStart_toEndOf="@+id/tvDay20"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay22"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay23"
+            app:layout_constraintStart_toEndOf="@+id/tvDay21"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay23"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay24"
+            app:layout_constraintStart_toEndOf="@+id/tvDay22"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay24"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay25"
+            app:layout_constraintStart_toEndOf="@+id/tvDay23"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay25"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay26"
+            app:layout_constraintStart_toEndOf="@+id/tvDay24"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay26"
+            style="@style/production_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDay25"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Week4 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay30"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay31"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay31"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay32"
+            app:layout_constraintStart_toEndOf="@+id/tvDay30"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay32"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay33"
+            app:layout_constraintStart_toEndOf="@+id/tvDay31"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay33"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay34"
+            app:layout_constraintStart_toEndOf="@+id/tvDay32"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay34"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay35"
+            app:layout_constraintStart_toEndOf="@+id/tvDay33"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay35"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay36"
+            app:layout_constraintStart_toEndOf="@+id/tvDay34"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay36"
+            style="@style/production_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDay35"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Week5 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutWeek5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay40"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay41"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay42"
+            app:layout_constraintStart_toEndOf="@+id/tvDay40"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay42"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay43"
+            app:layout_constraintStart_toEndOf="@+id/tvDay41"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay43"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay44"
+            app:layout_constraintStart_toEndOf="@+id/tvDay42"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay44"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay45"
+            app:layout_constraintStart_toEndOf="@+id/tvDay43"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay45"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay46"
+            app:layout_constraintStart_toEndOf="@+id/tvDay44"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay46"
+            style="@style/production_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDay45"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Week6 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutWeek6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay50"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay51"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay52"
+            app:layout_constraintStart_toEndOf="@+id/tvDay50"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay52"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay53"
+            app:layout_constraintStart_toEndOf="@+id/tvDay51"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay53"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay54"
+            app:layout_constraintStart_toEndOf="@+id/tvDay52"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay54"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay55"
+            app:layout_constraintStart_toEndOf="@+id/tvDay53"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay55"
+            style="@style/production_view"
+            app:layout_constraintEnd_toStartOf="@+id/tvDay56"
+            app:layout_constraintStart_toEndOf="@+id/tvDay54"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+
+        <kr.hmit.dmjs.ui.production_plan.view.ProductionDayView
+            android:id="@+id/tvDay56"
+            style="@style/production_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDay55"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

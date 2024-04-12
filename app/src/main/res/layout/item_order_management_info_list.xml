@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp">
+
+        <!--품번-->
+
+        <TextView
+            android:id="@+id/odd06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#616161"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/line1"
+            app:layout_constraintStart_toStartOf="@+id/odd05"
+            app:layout_constraintTop_toTopOf="@+id/tvOdd2"
+            tools:text="ODD_06" />
+
+        <TextView
+            android:id="@+id/tvOdd2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:letterSpacing="0.01"
+            android:text="금       액"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tvOdd05"
+            app:layout_constraintTop_toBottomOf="@+id/tvOdd05"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <TextView
+            android:id="@+id/odd05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textColor="#616161"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOdd05"
+            app:layout_constraintStart_toEndOf="@+id/tvOdd05"
+            app:layout_constraintTop_toTopOf="@+id/tvOdd05"
+            tools:text="ODD_05" />
+
+        <TextView
+            android:id="@+id/tvOdd05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:letterSpacing="0.01"
+            android:text="단       가"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOrderDDay"
+            app:layout_constraintStart_toEndOf="@+id/tvTestOrderDDay"
+            app:layout_constraintStart_toStartOf="@+id/tvTestOrderDDay"
+            app:layout_constraintTop_toTopOf="@+id/tvOrderDDay"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <TextView
+            android:id="@+id/odd04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#616161"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOdd04"
+            app:layout_constraintStart_toStartOf="@+id/tvOrderDDay"
+            app:layout_constraintTop_toTopOf="@+id/tvOdd04"
+            tools:text="ODD_04" />
+
+        <TextView
+            android:id="@+id/tvOdd04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:letterSpacing="0.01"
+            android:text="수       량"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tvTestOrderDDay"
+            app:layout_constraintTop_toBottomOf="@+id/tvTestOrderDDay"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <TextView
+            android:id="@+id/tvOdd03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:letterSpacing="-0.08"
+            android:text="공지사항"
+            android:textColor="#4574be"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="품번/품명" />
+        <!--품명-->
+
+        <TextView
+            android:id="@+id/tvTestOrderDDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="납기일자"
+            android:textColor="#9e9e9e"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tvOdd03"
+            app:layout_constraintTop_toBottomOf="@+id/tvOdd03" />
+
+        <TextView
+            android:id="@+id/tvOrderDDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="YYYY-MM-dd"
+            android:textColor="#9e9e9e"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTestOrderDDay"
+            app:layout_constraintStart_toEndOf="@+id/tvTestOrderDDay"
+            app:layout_constraintTop_toTopOf="@+id/tvTestOrderDDay" />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:background="#bdbdbd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOdd04" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/next_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

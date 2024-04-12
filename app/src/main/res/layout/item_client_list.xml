@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+    <!--글번호-->
+    <TextView
+        android:id="@+id/tvOrderNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#4574be"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="No. 일련번호" />
+
+    <!--입고처-->
+    <TextView
+        android:id="@+id/tvOrderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvOrderNo"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderNo"
+        tools:text="입고처" />
+
+    <TextView
+        android:id="@+id/tvOrderAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvOrderName"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderName"
+        tools:text="전남목포시" />
+
+    <!-- 발주일자 text -->
+    <TextView
+        android:id="@+id/tvTextOrderDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="발주일자"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvOrderAddress"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderAddress"/>
+    <!-- 발주일자 -->
+    <TextView
+        android:id="@+id/tvOrderDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvTextOrderDate"
+        app:layout_constraintStart_toEndOf="@+id/tvTextOrderDate"
+        tools:text="2020.04.01" />
+
+    <!--
+        <TextView
+            android:id="@+id/tvTextReceive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" · 입고율"
+            android:textColor="#9e9e9e"
+            android:textSize="14dp"
+            app:layout_constraintStart_toEndOf="@+id/tvOrderDate"
+            app:layout_constraintTop_toTopOf="@+id/tvTextOrderDate"/>-->
+
+
+    <TextView
+        android:id="@+id/tvPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvReceive"
+        app:layout_constraintStart_toEndOf="@+id/tvReceive"
+        android:text="%" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

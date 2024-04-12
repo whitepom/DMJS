@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+    <!--글번호-->
+    <TextView
+        android:id="@+id/tvWorkNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#4574be"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="No. 글번호" />
+
+    <!--분류 구분-->
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvWorkNo"
+        app:layout_constraintEnd_toStartOf="@+id/tvTextDivide"
+        app:layout_constraintTop_toTopOf="@+id/tvWorkNo"
+        tools:text="분류" />
+
+    <TextView
+        android:id="@+id/tvTextDivide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" / "
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvWorkNo"
+        app:layout_constraintEnd_toStartOf="@+id/tvState"
+        app:layout_constraintTop_toTopOf="@+id/tvWorkNo" />
+
+    <TextView
+        android:id="@+id/tvState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvWorkNo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvWorkNo"
+        tools:text="구분" />
+
+    <!--업무내용-->
+    <TextView
+        android:id="@+id/tvContents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvWorkNo"
+        app:layout_constraintTop_toBottomOf="@+id/tvWorkNo"
+        tools:text="업무내용" />
+
+    <!--해당 담당자 이름-->
+
+    <!-- 요청일자 text -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="@+id/tvWorkNo"
+        app:layout_constraintTop_toBottomOf="@+id/tvContents"
+        tools:listitem="@layout/item_work_management_list_employee" />
+
+    <TextView
+        android:id="@+id/tvTextRequestDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="요청일자"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvWorkNo"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+    <!-- 요청일자 -->
+    <TextView
+        android:id="@+id/tvRequestDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvTextRequestDate"
+        app:layout_constraintStart_toEndOf="@+id/tvTextRequestDate"
+        tools:text="2020.04.01" />
+
+    <!-- 완료일자 text -->
+    <TextView
+        android:id="@+id/tvTextCompleteDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text=" · 완료일자"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvTextRequestDate"
+        app:layout_constraintStart_toEndOf="@+id/tvRequestDate" />
+    <!-- 요청일자 -->
+    <TextView
+        android:id="@+id/tvCompleteDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvTextRequestDate"
+        app:layout_constraintStart_toEndOf="@+id/tvTextCompleteDate"
+        tools:text="2020.04.10" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imgProduct"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/no_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvProductNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="-5dp"
+        android:maxLines="3"
+        android:textColor="#616161"
+        android:textSize="16sp"
+
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgProduct"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Windows Server 2016 Standard" />
+
+
+    <TextView
+        android:id="@+id/tvProductName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="-5dp"
+        android:maxLines="3"
+        android:textColor="#616161"
+        android:textSize="14sp"
+
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgProduct"
+       app:layout_constraintTop_toBottomOf="@+id/tvProductNumber"
+        tools:text="Windows Server 2016 Standard" />
+
+    <TextView
+        android:id="@+id/tvTextSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="10dp"
+        android:text="규격"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+       app:layout_constraintTop_toBottomOf="@+id/tvProductName"
+        app:layout_constraintStart_toEndOf="@+id/imgProduct" />
+
+    <TextView
+        android:id="@+id/tvSizeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="#7daebf"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTextSize"
+        app:layout_constraintStart_toEndOf="@+id/tvTextSize"
+        app:layout_constraintTop_toTopOf="@+id/tvTextSize"
+        tools:text="1copy" />
+
+
+    <TextView
+        android:id="@+id/tvStandards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="#7daebf"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTextSize"
+        app:layout_constraintStart_toEndOf="@+id/tvSizeValue"
+        app:layout_constraintTop_toTopOf="@+id/tvTextSize"
+        tools:text="원자재" />
+<!--
+    <TextView
+        android:id="@+id/tvTextStock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="재고"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvStockCount"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvStockCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#4574be"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1000" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

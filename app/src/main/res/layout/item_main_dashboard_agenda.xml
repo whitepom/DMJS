@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#6265B1"
+    android:paddingBottom="8dp">
+
+
+    <TextView
+        android:id="@+id/tvODD01"
+        android:layout_width="110dp"
+        android:layout_height="24dp"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvDAH"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="발주번호" />
+
+    <TextView
+        android:id="@+id/tvDAH"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:paddingStart="5dp"
+        android:singleLine="true"
+
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvName"
+        app:layout_constraintStart_toEndOf="@+id/tvODD01"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="제품명" />
+<!--
+    <TextView
+        android:id="@+id/tvDAH_01"
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:textColor="#80ffffff"
+        android:gravity="center_horizontal"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvName"
+        app:layout_constraintStart_toEndOf="@+id/tvCLT"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="B004T099" />-->
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
+        android:textColor="#80ffffff"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="거래처명" />
+</androidx.constraintlayout.widget.ConstraintLayout>

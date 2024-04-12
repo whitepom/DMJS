@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+    <!--거래처코드-->
+    <TextView
+        android:id="@+id/tvClientNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#4574be"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="고객코드" />
+
+    <!--거래 구분-->
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvClientNum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvClientNum"
+        tools:text="고객구분" />
+
+    <!--상호-->
+    <TextView
+        android:id="@+id/tvClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvClientNo"
+        app:layout_constraintTop_toBottomOf="@+id/tvClientNo"
+        tools:text="성명" />
+    <!-- 대표자명 -->
+    <TextView
+        android:id="@+id/tvClientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvClient"
+        app:layout_constraintTop_toBottomOf="@+id/tvClient"
+        tools:text="주문경로                       " />
+
+
+    <TextView
+        android:id="@+id/tvTextDivide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" / "
+        android:textColor="#616161"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvClientName"
+        app:layout_constraintStart_toEndOf="@+id/tvClientName"
+        app:layout_constraintTop_toTopOf="@+id/tvClientName" />
+
+    <!-- 전화번호 -->
+    <TextView
+        android:id="@+id/tvClientNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTextDivide"
+        app:layout_constraintStart_toEndOf="@+id/tvTextDivide"
+        app:layout_constraintTop_toTopOf="@+id/tvClientName"
+        tools:text="010-0000-0000" />
+
+
+    <!-- 작성일자 -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

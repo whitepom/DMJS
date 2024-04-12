@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.product_info.AddProductInfoActivity">
+
+    <!-- region header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/BaseHeader"
+            android:text="일정관리 작성"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgWriteWork"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/edit"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#9e9e9e"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- endregion -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#f2f5f8"
+        android:paddingBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/shape_round10_white"
+            android:elevation="3dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--region 일자-->
+
+            <TextView
+                android:id="@+id/tvTextItem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="시작일자"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvStartDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvStartDate" />
+
+            <TextView
+                android:id="@+id/tvStartDate"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_round5_border1"
+                android:drawableStart="@drawable/date"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvTextItem1"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="" />
+            <TextView
+                android:id="@+id/tvTextItem12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:text="요청일자"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="@+id/tvEndDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvStartDate" />
+
+            <TextView
+                android:id="@+id/tvEndDate"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_round5_border1"
+                android:drawableStart="@drawable/date"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvTextItem12"
+                app:layout_constraintTop_toBottomOf="@+id/tvStartDate"
+                tools:text="" />
+
+
+            <!--endregion 일자-->
+
+            <!--region 일정분류-->
+
+            <TextView
+                android:id="@+id/tvTextItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="일정분류"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvCategory"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvCategory" />
+
+            <EditText
+                android:id="@+id/tvCategory"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_round5_border1"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/tvCategoryDDL"
+                app:layout_constraintStart_toEndOf="@+id/tvTextItem2"
+                app:layout_constraintTop_toBottomOf="@+id/tvEndDate"
+                tools:text="" />
+
+            <TextView
+                android:id="@+id/tvCategoryDDL"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_round5_border1"
+                android:drawableEnd="@drawable/dropdown"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textColor="#bdbdbd"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvCategory"
+                app:layout_constraintTop_toTopOf="@+id/tvCategory"
+                android:text="일정분류" />
+
+            <!--endregion 일정분류-->
+            <!--region 내용-->
+
+            <TextView
+                android:id="@+id/tvTextItem4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:text="관련내용"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvContent" />
+
+            <EditText
+                android:id="@+id/tvContent"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_round5_border1"
+                tools:text=""
+                android:maxLength="500"
+                android:maxLines="10"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:singleLine="true"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvTextItem4"
+                app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
+
+            <!--endregion 내용-->
+
+            <!--region 담당자-->
+
+            <TextView
+                android:id="@+id/tvTextItem3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:text="담  당  자"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/tvTextItem4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvManager"/>
+
+            <TextView
+                android:id="@+id/tvManager"
+                android:layout_width="130dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_round5_border1"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/tvManagerDDL"
+                app:layout_constraintStart_toEndOf="@+id/tvTextItem3"
+                app:layout_constraintTop_toBottomOf="@+id/tvContent"
+                tools:text="" />
+
+            <TextView
+                android:id="@+id/tvManagerDDL"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_round5_border1"
+                android:drawableEnd="@drawable/dropdown"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvManager"
+                app:layout_constraintTop_toTopOf="@+id/tvManager"
+                android:text="사원명" />
+
+            <!--endregion 담당자-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnUpdate"
+            style="@style/BaseButton"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="수정"
+            app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutInput" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            style="@style/BaseButton2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="삭제"
+            app:layout_constraintBottom_toBottomOf="@+id/btnUpdate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnUpdate"
+            app:layout_constraintTop_toTopOf="@+id/btnUpdate" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

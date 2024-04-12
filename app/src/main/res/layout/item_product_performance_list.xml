@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+    <!--품명/ 품번-->
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="tvProductionNo,tvProductionDate"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/tvProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="품명" />
+
+    <TextView
+        android:id="@+id/tvProductNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="#616161"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvProductName"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductName"
+        tools:text="품번" />
+
+    <!--생산번호-->
+    <TextView
+        android:id="@+id/tvFilter1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="생산번호 :"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvProductName"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductNo" />
+    <TextView
+        android:id="@+id/tvProductionNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:layout_marginLeft="10dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvFilter1"
+        app:layout_constraintTop_toTopOf="@+id/tvFilter1"
+        tools:text=" " />
+
+    <!--단위-->
+    <TextView
+        android:id="@+id/tvFilter2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:text="단위 :"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductNo" />
+
+    <TextView
+        android:id="@+id/tvUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+
+        android:textColor="#ffffff"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvFilter2"
+        app:layout_constraintTop_toTopOf="@+id/tvFilter2"
+        tools:text="L03050778 " />
+
+
+    <!--생산일자-->
+    <TextView
+        android:id="@+id/tvFilter3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvProductName"
+        app:layout_constraintTop_toBottomOf="@+id/tvFilter1"
+        android:text="생산일자 :" />
+    <TextView
+        android:id="@+id/tvProductionDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="10dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toEndOf="@+id/tvFilter3"
+        app:layout_constraintTop_toTopOf="@+id/tvFilter3"
+        tools:text="2020-02-14 " />
+
+    <!--생산수량-->
+    <TextView
+        android:id="@+id/tvFilter4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="생산수량 :"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvProductionDate"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        app:layout_constraintTop_toBottomOf="@+id/tvFilter2" />
+
+    <TextView
+        android:id="@+id/tvProductionCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textColor="#ffffff"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvFilter4"
+        app:layout_constraintTop_toTopOf="@+id/tvFilter4"
+        tools:text="255 " />
+
+
+    <!--자재구분-->
+    <TextView
+        android:id="@+id/tvFilter5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="자재구분 :"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        app:layout_constraintTop_toBottomOf="@+id/tvFilter10" />
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:layout_marginLeft="10dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvFilter5"
+        app:layout_constraintTop_toTopOf="@+id/tvFilter5"
+        tools:text="완제품 " />
+
+    <!--수율-->
+    <TextView
+        android:id="@+id/tvFilter6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="투입원재료 :"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        app:layout_constraintTop_toBottomOf="@+id/tvFilter4" />
+    <TextView
+        android:id="@+id/tvYield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="#ffffff"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/tvFilter6"
+        app:layout_constraintStart_toEndOf="@+id/tvFilter6"
+        tools:text="50 %" />
+
+    <!--작업시간(분)-->
+    <TextView
+        android:id="@+id/tvFilter7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="작업시간(분) :"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvProductName"
+        app:layout_constraintTop_toBottomOf="@+id/tvFilter12" />
+    <TextView
+        android:id="@+id/tvworkingTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="10dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvFilter7"
+        app:layout_constraintTop_toTopOf="@+id/tvFilter7"
+        tools:text="10 " />
+
+    <!--투입원재료-->
+    <TextView
+        android:id="@+id/tvFilter8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="투입수량 :"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        app:layout_constraintTop_toBottomOf="@+id/tvFilter6" />
+    <TextView
+        android:id="@+id/tvRawMaterial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="#ffffff"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/tvFilter8"
+        app:layout_constraintStart_toEndOf="@+id/tvFilter8"
+        tools:text="1건" />
+
+    <!--작업설비-->
+    <TextView
+        android:id="@+id/tvFilter9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvProductName"
+        app:layout_constraintTop_toBottomOf="@+id/tvFilter7"
+        android:text="생산라인 :" />
+    <TextView
+        android:id="@+id/tvWorkEquipment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="10dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvFilter9"
+        app:layout_constraintTop_toTopOf="@+id/tvFilter9"
+        tools:text="공장" />
+
+    <!--작성자-->
+    <TextView
+        android:id="@+id/tvFilter10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="수율 :"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        app:layout_constraintTop_toBottomOf="@+id/tvFilter8" />
+    <TextView
+        android:id="@+id/tvWriter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="#ffffff"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/tvFilter10"
+        app:layout_constraintStart_toEndOf="@+id/tvFilter10"
+        tools:text="admin" />
+
+    <!--작업자-->
+    <TextView
+        android:id="@+id/tvFilter11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="작업자 :"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFilter9" />
+    <TextView
+        android:id="@+id/tvWorkerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="10dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvFilter11"
+        app:layout_constraintTop_toTopOf="@+id/tvFilter11"
+        tools:text="admin" />
+
+    <!--유통기간-->
+    <TextView
+        android:id="@+id/tvFilter12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="유통기간 :"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFilter3" />
+    <TextView
+        android:id="@+id/tvExpirationDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="#ffffff"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/tvFilter12"
+        app:layout_constraintStart_toEndOf="@+id/tvFilter12"
+        tools:text="2020-11-21" />
+
+
+    <!-- 작성일자 -->
+    <TextView
+        android:id="@+id/tvTextDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="작성일시"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvClientNo"
+        app:layout_constraintEnd_toStartOf="@+id/tvDate"
+        app:layout_constraintTop_toTopOf="@+id/tvClientNo" />
+    <!-- 작성일자 -->
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvTextDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="YYYY-MM-DD" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

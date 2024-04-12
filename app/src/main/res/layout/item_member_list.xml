@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/tvMEM02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#4574be"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="담당자명" />
+
+
+    <!--상호-->
+    <TextView
+        android:id="@+id/tvMEM01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvMEM02"
+        app:layout_constraintTop_toBottomOf="@+id/tvMEM02"
+        tools:text="성명" />
+    <!-- 대표자명 -->
+    <TextView
+        android:id="@+id/tvMEM32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="#616161"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvMEM01"
+        app:layout_constraintTop_toBottomOf="@+id/tvMEM01"
+        tools:text="직급" />
+
+
+
+
+
+    <!-- 작성일자 -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

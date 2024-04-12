@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6265B1</color>
+    <color name="colorPrimaryDark">#6265B1</color>
+    <color name="colorAccent">#9598E6</color>
+    <color name="colorBackground">#f2f2f2</color>
+    <color name="background">#fafaff</color>
+
+    <!--고정 컬러값-->
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="transparent_color">#00000000</color>
+
+
+    <!--앱 스타일-->
+    <color name="colorDefaultBackground">#ffffff</color>
+
+    <color name="colorDefaultButton">#8cd790</color>
+    <color name="colorDefaultButtonDisable">#9EA5AD</color>
+    <color name="colorDefaultButtonPress">#aa8cd790</color>
+
+    <color name="colorTextGray">#9dc8c8</color>
+    <color name="colorTextBlack">#000000</color>
+    <color name="horizontal_line_color">#9E9E9E</color>
+    <!-- 텍스트뷰 -->
+    <color name="textView_Filter">#9E9E9E</color>
+    <color name="textView_Filter_Primary">#6265B1</color>
+    <color name="textView_Content_Primary">#6265B1</color>
+    <color name="textView_Content">#616161</color>
+    <color name="textView_Content_Right">#7F7F7F</color>
+</resources>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.worker_code.AddWorkerCodeActivity"
+    tools:ignore="SpUsage">
+
+    <!-- region header -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/BaseHeader"
+            android:text="활전복 투입등록"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#9e9e9e"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- endregion -->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f5f8"
+            android:paddingBottom="24dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutInput"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/shape_round10_white"
+                android:elevation="3dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/layoutInput2"
+                tools:layout_editor_absoluteX="32dp">
+
+
+                <TextView
+                    android:id="@+id/tvTextOptional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:text="출고목록"
+                    android:textColor="#4574be"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="8dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTextOptional"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:listitem="@layout/item_ngm04_main_detail_list" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutInput2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_round10_white"
+                android:elevation="3dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" >
+
+                <TextView
+                    android:id="@+id/ngm04Nm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#616161"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvNgm04Nm"
+                    app:layout_constraintStart_toStartOf="@+id/ngm01"
+                    app:layout_constraintTop_toTopOf="@+id/tvNgm04Nm"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:text="NGM_04" />
+
+                <TextView
+                    android:id="@+id/tvNgm04Nm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:letterSpacing="-0.01"
+                    android:text="출  고  처"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvNgm01"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNgm01"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+                <TextView
+                    android:id="@+id/ngm03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:letterSpacing="0"
+                    android:textColor="#616161"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvNgm03"
+                    app:layout_constraintStart_toEndOf="@+id/tvNgm03"
+                    app:layout_constraintTop_toTopOf="@+id/tvNgm03"
+                    tools:text="NGM_03" />
+
+                <TextView
+                    android:id="@+id/tvNgm03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:letterSpacing="0"
+                    android:text="출고구분"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvZag02"
+                    app:layout_constraintTop_toBottomOf="@+id/tvZag02"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+                <TextView
+                    android:id="@+id/ngm01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvNgm01"
+                    app:layout_constraintStart_toEndOf="@+id/tvNgm01"
+                    app:layout_constraintTop_toTopOf="@+id/tvNgm01"
+                    app:layout_constraintVertical_bias="0.50"
+                    tools:text="NGM_01" />
+
+                <TextView
+                    android:id="@+id/tvNgm01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="95dp"
+                    android:text="관련번호"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toEndOf="@+id/tvZag02"
+                    app:layout_constraintTop_toTopOf="@+id/tvZag02"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+                <TextView
+                    android:id="@+id/ngm02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvZag02"
+                    app:layout_constraintStart_toEndOf="@+id/tvZag02"
+                    app:layout_constraintTop_toTopOf="@+id/tvZag02"
+                    tools:text="NGM_02" />
+
+                <TextView
+                    android:id="@+id/tvZag02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="출고일자"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText,SpUsage" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

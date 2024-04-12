@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/gag10Nm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGag10"
+        app:layout_constraintStart_toStartOf="@+id/dah14"
+        app:layout_constraintTop_toTopOf="@+id/tvGag10"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="GAG_10_NM" />
+
+    <TextView
+        android:id="@+id/tvGag10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="완료구분"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvDah14"
+        app:layout_constraintTop_toBottomOf="@+id/tvDah14"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/gag51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:letterSpacing="-0.08"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGag51"
+        app:layout_constraintStart_toEndOf="@+id/tvGag51"
+        app:layout_constraintTop_toTopOf="@+id/tvGag51"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="08:00~18:00(600분)" />
+
+    <TextView
+        android:id="@+id/tvGag51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="생산시간"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvGag11"
+        app:layout_constraintTop_toBottomOf="@+id/tvGag11"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/tvGag11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="생산수량"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvGag01"
+        app:layout_constraintTop_toTopOf="@+id/dah14"
+        tools:ignore="HardcodedText,SpUsage"
+        tools:lineHeight="13sp" />
+
+    <TextView
+        android:id="@+id/gag11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGag11"
+        app:layout_constraintStart_toEndOf="@+id/tvGag11"
+        app:layout_constraintTop_toTopOf="@+id/tvGag11"
+        tools:text="4" />
+
+    <TextView
+        android:id="@+id/dah14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDah14"
+        app:layout_constraintStart_toEndOf="@+id/tvDah14"
+        app:layout_constraintTop_toTopOf="@+id/tvDah14"
+        tools:text="DAH_14" />
+
+    <TextView
+        android:id="@+id/tvDah14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:letterSpacing="0.13"
+        android:text="규    격"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvLot03"
+        app:layout_constraintTop_toBottomOf="@+id/tvLot03"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/tvLot03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:letterSpacing="-0.1"
+        android:text="품번/품명"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvGag02"
+        app:layout_constraintTop_toBottomOf="@+id/tvGag02"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/gag03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:letterSpacing="-0.15"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvLot03"
+        app:layout_constraintStart_toEndOf="@+id/tvLot03"
+        app:layout_constraintTop_toTopOf="@+id/tvLot03"
+        tools:text="LOT_03" />
+
+    <TextView
+        android:id="@+id/gag01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGag01"
+        app:layout_constraintStart_toEndOf="@+id/tvGag01"
+        app:layout_constraintTop_toTopOf="@+id/tvGag01"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="GAG_01" />
+
+    <TextView
+        android:id="@+id/tvGag01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="105dp"
+        android:text="작지번호"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/tvGag02"
+        app:layout_constraintTop_toTopOf="@+id/tvGag02"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/tvGag02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:text="생산일자"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/gag04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvGag02"
+        app:layout_constraintStart_toEndOf="@+id/tvGag02"
+        app:layout_constraintTop_toTopOf="@+id/tvGag02"
+        tools:text="GAG_04" />
+</androidx.constraintlayout.widget.ConstraintLayout>

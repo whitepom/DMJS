@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+    <CheckBox
+        android:id="@+id/chkRelease"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:checked="false" />
+
+    <TextView
+        android:id="@+id/tvOrderNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="#616161"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/chkRelease"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="No.주문번호" />
+
+
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="#616161"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOrderNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvOrderNumber"
+        android:text=" " />
+
+
+    <TextView
+        android:id="@+id/REQ_03_NM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#9e9e9e"
+        android:textSize="18sp"
+        android:maxLength="15"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvOrderNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderNumber"
+        tools:text="주문자" />
+
+    <EditText
+        android:id="@+id/tvInput"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|right"
+        android:inputType="number"
+        android:textColor="#7daebf"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/REQ_03_NM"
+        app:layout_constraintBottom_toBottomOf="@+id/REQ_03_NM"
+        tools:text="0" />
+
+
+
+
+    <TextView
+        android:id="@+id/tvDAH_02"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#4574be"
+        android:textSize="14sp"
+        android:maxLength="15"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/REQ_03_NM"
+        app:layout_constraintTop_toBottomOf="@+id/REQ_03_NM"
+        tools:text="품명" />
+
+    <TextView
+        android:id="@+id/tvReleaseCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDAH_02"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvDAH_02"
+
+        tools:text="0/0" />
+
+
+
+
+    <TextView
+        android:id="@+id/DAH_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvDAH_02"
+        app:layout_constraintTop_toBottomOf="@+id/tvDAH_02"
+        tools:text="품번" />
+
+    <TextView
+        android:id="@+id/tvEA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/DAH_01"
+        app:layout_constraintStart_toEndOf="@+id/DAH_01"
+        app:layout_constraintTop_toTopOf="@+id/DAH_01"
+        tools:text="/ 단위" />
+
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvReleaseDate"
+        app:layout_constraintEnd_toStartOf="@+id/tvReleaseDate"
+        app:layout_constraintTop_toTopOf="@+id/tvReleaseDate"
+        android:text="출고일자" />
+
+    <TextView
+        android:id="@+id/tvReleaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvEA"
+      app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvEA"
+        tools:text="YYYY-MM-DD" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

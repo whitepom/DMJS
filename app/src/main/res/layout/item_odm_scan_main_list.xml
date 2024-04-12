@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="5dp">
+
+    <CheckBox
+        android:id="@+id/chkWarehousing"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvOrderName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#616161"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvProductNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductNumber"
+        tools:text="거래처정보" />
+
+    <!--<TextView
+        android:id="@+id/tvConstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:textSize="16sp"
+        android:textColor="#7daebf"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintBottom_toBottomOf="@+id/tvOrderNumber"
+        app:layout_constraintTop_toTopOf="@+id/tvOrderNumber"
+        tools:text="/ 공사명" />-->
+
+    <TextView
+        android:id="@+id/tvProductNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvProductName"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductName"
+        tools:text="품목번호" />
+
+    <TextView
+        android:id="@+id/tvProductName"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#4574be"
+
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/chkWarehousing"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="품목명" />
+
+    <EditText
+        android:id="@+id/tvQuantity1"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|right"
+        android:inputType="number"
+        android:textColor="#7daebf"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvProductName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvProductName"
+        tools:text="입고수량 " />
+
+    <TextView
+        android:id="@+id/tvQuantity2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:textColor="#9e9e9e"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvStandards"
+        app:layout_constraintEnd_toStartOf="@+id/tvStandards"
+        tools:text="0/0" />
+
+    <TextView
+        android:id="@+id/tvStandards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textColor="#9e9e9e"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvProductNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvProductNumber"
+
+        tools:text="(매)" />
+
+    <!-- <TextView
+        android:id="@+id/tvStandards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@+id/tvProductNumber"
+        app:layout_constraintTop_toTopOf="@+id/tvProductNumber"
+        app:layout_constraintBottom_toBottomOf="@+id/tvProductNumber"
+
+        tools:text="(100*200*300)" />-->
+
+
+    <TextView
+        android:id="@+id/tvFilter2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="단가:"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toStartOf="@+id/tvPrice"
+
+        app:layout_constraintTop_toTopOf="@id/tvPrice" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="0dp"
+        android:textColor="#9e9e9e"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOrderName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvOrderName"
+        tools:text="0원" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

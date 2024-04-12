@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.worker_code.AddWorkerCodeActivity"
+    tools:ignore="SpUsage">
+
+    <!-- region header -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/BaseHeader"
+            android:text="출고정보 신규등록"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#9e9e9e"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- endregion -->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f5f8"
+            android:paddingBottom="24dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_round10_white"
+                android:elevation="3dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <!--region 주문번호-->
+
+                <EditText
+                    android:id="@+id/ngm01"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round_border_readonly"
+                    android:enabled="false"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:text="자동생성"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/ngm04"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round_border_readonly"
+                    android:enabled="false"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/ngm04Nm" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="tvNgm01"
+                    tools:layout_editor_absoluteX="74dp" />
+
+                <!--endregion 주문번호-->
+
+                <!--region 판매유형-->
+
+                <TextView
+                    android:id="@+id/tvNgm01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="관련번호"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ngm01"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ngm01"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+                <!--endregion 판매유형-->
+
+                <!--region 주문일자-->
+
+                <TextView
+                    android:id="@+id/tvNgm02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="출고일자"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ngm02"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ngm02"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+                <TextView
+                    android:id="@+id/ngm02"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:drawableStart="@drawable/date"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:textColor="#616161"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/ngm01"
+                    tools:text=" " />
+
+                <!--endregion 주문일자-->
+
+
+                <!--region 납기일자-->
+
+                <!--endregion 납기일자-->
+
+                <!--region 주문자-->
+
+                <!--endregion 주문자-->
+
+                <!--region 품명-->
+
+                <TextView
+                    android:id="@+id/tvZag03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:letterSpacing="0.1"
+                    android:text="출 고 처"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ngm04Nm"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ngm04Nm" />
+
+
+                <TextView
+                    android:id="@+id/ngm04Nm"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:gravity="center_vertical"
+                    android:hint="출고처를 입력하세요."
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/addCltNum"
+                    app:layout_constraintStart_toStartOf="@id/barrier"
+                    app:layout_constraintTop_toBottomOf="@+id/ngm02" />
+
+                <ImageView
+                    android:id="@+id/addCltNum"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/shape_round5_add_employee"
+                    android:padding="6dp"
+                    android:src="@drawable/add_employee"
+                    app:layout_constraintBottom_toBottomOf="@+id/ngm04Nm"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ngm04Nm" />
+
+                <!--endregion 품명-->
+
+                <!--region 단위-->
+
+                <!--endregion 단위-->
+
+                <!--region 단가-->
+
+                <!--endregion 단가-->
+
+                <!--region 주문수량-->
+
+                <!--endregion 주문수량-->
+
+                <!--region 금액-->
+
+                <!--endregion 금액-->
+
+
+                <!--region 비고-->
+
+                <!--endregion 내용-->
+
+
+                <!--region 프로젝트-->
+
+                <!--endregion 프로젝트-->
+
+                <!--region 이벤트-->
+
+                <!--endregion 이벤트-->
+
+                <!--region 홍보/마케팅-->
+
+                <!--endregion 홍보/마케팅-->
+
+
+                <!--region 납품수량-->
+
+                <!--endregion 납품수량-->
+
+                <!--region 마감수량-->
+
+                <!--endregion 마감수량-->
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btnSave"
+                style="@style/BaseButton"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/common_save"
+                app:layout_constraintTop_toBottomOf="@+id/layoutInput" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

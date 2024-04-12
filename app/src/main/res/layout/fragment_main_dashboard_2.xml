@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main_dashboard.MainDashboardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f2f5f8"
+        android:paddingBottom="24dp">
+
+        <!--업무일정-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutAgenda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:paddingBottom="8dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tablayout_control"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabIndicatorColor="#4574be"
+                app:tabIndicatorHeight="100dp"
+                app:tabMaxWidth="0dp"
+                app:tabGravity="fill"
+                app:tabMode="fixed">
+
+            </com.google.android.material.tabs.TabLayout>
+
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager_control"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tablayout_control" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--    &lt;!&ndash;알림현장&ndash;&gt;
+            <TextView
+                android:id="@+id/tvTextNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/noto_sans_cjk_kr_bold"
+                android:text="알림현황"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutAgenda" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutNotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_bg_round_6_white"
+                android:elevation="3dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTextNotification"
+                tools:visibility="gone">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutNotificationTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvTitleDate"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_cjk_kr_medium"
+                        android:gravity="center"
+                        android:text="차기점검일"
+                        android:textColor="#4574be"
+                        android:textSize="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTitleManage"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_cjk_kr_medium"
+                        android:gravity="center"
+                        android:text="관리항목"
+                        android:textColor="#4574be"
+                        android:textSize="16dp"
+                        app:layout_constraintEnd_toStartOf="@+id/tvTitleCheck"
+                        app:layout_constraintStart_toEndOf="@+id/tvTitleDate"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTitleCheck"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_cjk_kr_medium"
+                        android:gravity="center"
+                        android:text="점검항목"
+                        android:textColor="#4574be"
+                        android:textSize="16dp"
+                        app:layout_constraintEnd_toStartOf="@+id/tvTitleName"
+                        app:layout_constraintStart_toEndOf="@+id/tvTitleManage"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTitleName"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_cjk_kr_medium"
+                        android:gravity="center"
+                        android:text="담당자"
+                        android:textColor="#4574be"
+                        android:textSize="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#80bdbdbd"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutNotificationTitle" />
+
+                <TextView
+                    android:id="@+id/tvTextNoNotification"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:text="알림이 없습니다."
+                    android:textColor="#9e9e9e"
+                    android:textSize="14dp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line2"
+                    tools:visibility="visible" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewNotification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:nestedScrollingEnabled="true"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTextNoNotification"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_main_dashboard_notification"
+                    tools:visibility="visible" />
+            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <!--IOT 모니터링-->
+        <TextView
+            android:id="@+id/tvTextMonitoring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="IOT 모니터링"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutAgenda"  />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutMonitoring"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/shape_bg_round_6_white"
+            android:elevation="3dp"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTextMonitoring"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/tvTextOver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/iot_color_over"
+                android:drawablePadding="4dp"
+                android:text="경계"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTextNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="11dp"
+                android:drawableStart="@drawable/iot_color_normal"
+                android:drawablePadding="4dp"
+                android:text="적정"
+                app:layout_constraintEnd_toStartOf="@+id/tvTextOver"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgIotTemperature"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/iot_back_normal"
+                android:padding="10dp"
+                android:src="@drawable/tem"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTextNormal" />
+
+            <TextView
+                android:id="@+id/tvTextTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="온도"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toEndOf="@+id/imgIotTemperature"
+                app:layout_constraintTop_toTopOf="@+id/imgIotTemperature" />
+
+            <TextView
+                android:id="@+id/tvTextTemperatureEn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="temperature"
+                android:textColor="#9e9e9e"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideLine"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="@+id/tvTextTemperature"
+                app:layout_constraintTop_toBottomOf="@+id/tvTextTemperature" />
+
+            <TextView
+                android:id="@+id/tvValueTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/selector_iot_text"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/tvTextTemperature"
+                app:layout_constraintTop_toBottomOf="@+id/tvTextTemperatureEn"
+                tools:text="90℃" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_percent="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgIotHumidity"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/iot_back_normal"
+                android:padding="5dp"
+                android:src="@drawable/wet"
+                app:layout_constraintStart_toEndOf="@+id/guideLine"
+                app:layout_constraintTop_toBottomOf="@+id/tvTextNormal" />
+
+            <TextView
+                android:id="@+id/tvTextHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="습도"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toEndOf="@+id/imgIotHumidity"
+                app:layout_constraintTop_toTopOf="@+id/imgIotHumidity" />
+
+            <TextView
+                android:id="@+id/tvTextHumidityEn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="humidity"
+                android:textColor="#9e9e9e"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/guideLine"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="@+id/tvTextHumidity"
+                app:layout_constraintTop_toBottomOf="@+id/tvTextHumidity" />
+
+            <TextView
+                android:id="@+id/tvValueHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/selector_iot_text"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/tvTextHumidity"
+                app:layout_constraintTop_toBottomOf="@+id/tvTextHumidityEn"
+                tools:text="90%" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--       &lt;!&ndash;주문내역&ndash;&gt;
+               <TextView
+                   android:id="@+id/tvTextOrder"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="16dp"
+                   android:layout_marginTop="16dp"
+                   android:fontFamily="@font/noto_sans_cjk_kr_bold"
+                   android:text="주문내역"
+                   android:textColor="@color/black"
+                   android:textSize="18dp"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/layoutMonitoring" />
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:id="@+id/layoutOrder"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginStart="16dp"
+                   android:layout_marginTop="8dp"
+                   android:layout_marginEnd="16dp"
+
+                   android:background="@drawable/shape_bg_round_6_white"
+                   android:elevation="3dp"
+                   android:paddingTop="16dp"
+                   android:paddingBottom="8dp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/tvTextOrder"
+                   tools:visibility="gone">
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:id="@+id/layoutOrderTitle"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginStart="16dp"
+                       android:layout_marginEnd="16dp"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent">
+
+                       <TextView
+                           android:id="@+id/tvTitleOrderDate"
+                           android:layout_width="80dp"
+                           android:layout_height="wrap_content"
+                           android:fontFamily="@font/noto_sans_cjk_kr_medium"
+                           android:gravity="center"
+                           android:text="주문일자"
+                           android:textColor="#4574be"
+                           android:textSize="16dp"
+                           app:layout_constraintEnd_toStartOf="@+id/tvTitleOrderer"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent" />
+
+                       <TextView
+                           android:id="@+id/tvTitleOrderer"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:fontFamily="@font/noto_sans_cjk_kr_medium"
+                           android:gravity="center"
+                           android:text="주문자"
+                           android:textColor="#4574be"
+                           android:textSize="16dp"
+                           app:layout_constraintEnd_toStartOf="@+id/tvTitleOrderItem"
+                           app:layout_constraintStart_toEndOf="@+id/tvTitleOrderDate"
+                           app:layout_constraintTop_toTopOf="parent" />
+
+                       <TextView
+                           android:id="@+id/tvTitleOrderItem"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:fontFamily="@font/noto_sans_cjk_kr_medium"
+                           android:gravity="center"
+                           android:text="품명"
+                           android:textColor="#4574be"
+                           android:textSize="16dp"
+                           app:layout_constraintEnd_toStartOf="@+id/tvTitleOrderQuantity"
+                           app:layout_constraintStart_toEndOf="@+id/tvTitleOrderer"
+                           app:layout_constraintTop_toTopOf="parent" />
+
+                       <TextView
+                           android:id="@+id/tvTitleOrderQuantity"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:fontFamily="@font/noto_sans_cjk_kr_medium"
+                           android:gravity="center"
+                           android:text="주문수량"
+                           android:textColor="#4574be"
+                           android:textSize="16dp"
+                           app:layout_constraintEnd_toStartOf="@+id/tvTitleOrderDDay"
+                           app:layout_constraintStart_toEndOf="@+id/tvTitleOrderItem"
+                           app:layout_constraintTop_toTopOf="parent" />
+
+                       <TextView
+                           android:id="@+id/tvTitleOrderDDay"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:fontFamily="@font/noto_sans_cjk_kr_medium"
+                           android:gravity="center"
+                           android:text="D-DAY"
+                           android:textColor="#4574be"
+                           android:textSize="16dp"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintStart_toEndOf="@+id/tvTitleOrderQuantity"
+                           app:layout_constraintTop_toTopOf="parent" />
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+
+                   <View
+                       android:id="@+id/line3"
+                       android:layout_width="match_parent"
+                       android:layout_height="1dp"
+                       android:layout_marginTop="8dp"
+                       android:background="#80bdbdbd"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toBottomOf="@+id/layoutOrderTitle" />
+
+                   <TextView
+                       android:id="@+id/tvTextNoOrder"
+                       android:layout_width="match_parent"
+                       android:layout_height="100dp"
+                       android:gravity="center"
+                       android:text="주문내역이 없습니다."
+                       android:textColor="#9e9e9e"
+                       android:textSize="14dp"
+                       android:visibility="visible"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toBottomOf="@+id/line3"
+                       tools:visibility="visible" />
+
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/recyclerViewOrder"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginStart="16dp"
+                       android:layout_marginTop="8dp"
+                       android:layout_marginEnd="16dp"
+                       android:nestedScrollingEnabled="true"
+                       android:visibility="gone"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toBottomOf="@+id/tvTextNoOrder"
+                       tools:itemCount="4"
+                       tools:listitem="@layout/item_main_dashboard_order"
+                       tools:visibility="visible" />
+               </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <!--        &lt;!&ndash;거래처별 누적주문량&ndash;&gt;
+                <TextView
+                    android:id="@+id/tvTextHistory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/noto_sans_cjk_kr_bold"
+                    android:text="거래처별 누적주문량"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutOrder" />-->
+
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/shape_bg_round_6_white"
+                    android:elevation="3dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTextHistory">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <!--거래처별 월간주문량-->
+        <!--
+                <TextView
+                    android:id="@+id/tvTextMonthly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/noto_sans_cjk_kr_bold"
+                    android:text="거래처별 월간주문량"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutHistory" />
+        -->
+
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutMonthly"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/shape_bg_round_6_white"
+                    android:elevation="3dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTextMonthly">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

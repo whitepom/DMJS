@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/run09"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRun09"
+        app:layout_constraintStart_toStartOf="@+id/run2202"
+        app:layout_constraintTop_toTopOf="@+id/tvRun09"
+        app:layout_constraintVertical_bias="0.5"
+        tools:text="RUN_09" />
+
+    <TextView
+        android:id="@+id/tvRun09"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:letterSpacing="0"
+        android:text="상품모델"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvRun2203"
+        app:layout_constraintTop_toBottomOf="@+id/tvRun2202"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/tvRun26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0"
+        android:text="전화번호"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRun2202"
+        app:layout_constraintStart_toStartOf="@+id/tvRun2101"
+        app:layout_constraintTop_toTopOf="@+id/tvRun2202"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/run26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRun26"
+        app:layout_constraintStart_toStartOf="@+id/run2101"
+        app:layout_constraintTop_toTopOf="@+id/tvRun26"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="RUN_26" />
+
+    <TextView
+        android:id="@+id/run2202"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRun2202"
+        app:layout_constraintStart_toStartOf="@+id/run2203"
+        app:layout_constraintTop_toTopOf="@+id/tvRun2202"
+        app:layout_constraintVertical_bias="0.5"
+        tools:text="RUN_2202" />
+
+    <TextView
+        android:id="@+id/tvRun2202"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:letterSpacing="0"
+        android:text="전화번호"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvRun2203"
+        app:layout_constraintTop_toBottomOf="@+id/tvRun2203"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/run2203"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRun2203"
+        app:layout_constraintStart_toStartOf="@+id/run2201"
+        app:layout_constraintTop_toTopOf="@+id/tvRun2203"
+        app:layout_constraintVertical_bias="0.5"
+        tools:text="RUN_2203" />
+
+    <TextView
+        android:id="@+id/tvRun2203"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:letterSpacing="0.22"
+        android:text="주   소"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvRun2201"
+        app:layout_constraintTop_toBottomOf="@+id/tvRun2201"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/tvRun2101"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:letterSpacing="-0.01"
+        android:text="주  문  자"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvRun02"
+        app:layout_constraintTop_toBottomOf="@+id/tvRun02"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/run2101"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRun2101"
+        app:layout_constraintStart_toStartOf="@+id/run02"
+        app:layout_constraintTop_toTopOf="@+id/tvRun2101"
+        tools:text="RUN_2101" />
+
+    <TextView
+        android:id="@+id/run2201"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRun2201"
+        app:layout_constraintStart_toEndOf="@+id/tvRun01"
+        app:layout_constraintTop_toTopOf="@+id/tvRun2201"
+        tools:text="RUN_2201" />
+
+    <TextView
+        android:id="@+id/tvRun2201"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:letterSpacing="-0.01"
+        android:text="수  취  인"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvRun01"
+        app:layout_constraintTop_toBottomOf="@+id/tvRun01"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/tvRun02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:text="주문일자"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/tvRun01"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/run02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRun02"
+        app:layout_constraintStart_toEndOf="@+id/tvRun02"
+        app:layout_constraintTop_toTopOf="@+id/tvRun02"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="RUN_02" />
+
+    <TextView
+        android:id="@+id/run01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRun01"
+        app:layout_constraintStart_toEndOf="@+id/tvRun01"
+        app:layout_constraintTop_toTopOf="@+id/tvRun01"
+        tools:text="RUN_01" />
+
+    <TextView
+        android:id="@+id/tvRun01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="주문번호"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="kr.hmit.dmjs">
+
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="kr.hmit.dmjs.permission.SCANNER_RESULT_RECEIVER" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <permission
+        android:name="kr.hmit.dmjs.permission.SCANNER_RESULT_RECEIVER"
+        android:protectionLevel="normal" />
+
+    <application
+        android:name="kr.hmit.base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_dmjs_logo"
+        android:label="다시마전복"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:hardwareAccelerated="true"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true">
+        <activity android:name="kr.hmit.dmjs.ui.notice.NoticeAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.notice.NoticeDetailActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.notice.NoticeMainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.work_management.WorkManagementMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.production_plan.ProductionDetailActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.production_plan.ProductionAddActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.sample.AddressActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.product_info.AddProductInfoActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.product_info.ProductInfoMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.product_info.ProductInfoDetailActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.work_management.WorkManagementFilterActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.work_management.WorkManagementDetailActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.work_management.find_employee.work_management_FindEmployeeActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.worker_code.WorkerCodeFilterActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.worker_code.AddWorkerCodeActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.worker_code.WorkerCodeDetailActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.worker_code.WorkerCodeMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.work_management.AddWorkActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_management.OrderManagementDetailActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_management.FindProductActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_management.OrderManagementMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_management.OrderManagementAddActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_management.OrderManagementFilterActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_management.OrderManagementInfoMain" />
+        <activity android:name="kr.hmit.dmjs.ui.order_management.OrderManagementInfoDetail" />
+        <activity android:name="kr.hmit.dmjs.ui.order_management.OrderManagementInfoAdd" />
+        <activity android:name="kr.hmit.dmjs.ui.client_management.ClientManagementFilterActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.client_management.ClientManagementDetailActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.client_management.ClientManagementAddActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.client_management.ClientManagementMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.receive.ReceiveFilterActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.receive.FindConstructionActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.receive.ReceiveDetailActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.receive.ReceiveMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.receive.ReceiveCurrentActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.receive.ReceiveAddActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.release.ReleaseCurrentActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.release.ReleaseMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.release.ReleaseFilterActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.release.ReleaseInfoAdd" />
+        <activity android:name="kr.hmit.dmjs.ui.release.ReleaseInfoDetail" />
+        <activity android:name="kr.hmit.dmjs.ui.release.ReleaseInfoMain" />
+        <activity android:name="kr.hmit.dmjs.ui.release.ReleaseAddActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.release.DeliveryStatusMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.release.ReleaseDetailActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.release.DeliveryStatusFilterActivity" />
+
+        <activity android:name="kr.hmit.dmjs.ui.schedule.ScheduleDetailActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.schedule.ScheduleAddActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.schedule.ScheduleMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.production_plan.ProductionPlanMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_request.OrderRequestAddActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_request.OrderRequestMultiAddActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_request.OrderRequestMultiAddProductActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_request.OrderRequestMultiAddProductUpdateActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_request.OrderRequestDetailActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_request.OderRequestMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_request.OrderRequestFilterActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_request.OderRequestFindProductActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.order_request.ClientNameListActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.stockage_list.StockageListFilterActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.stockage_list.StockageListAdjustmentDetailActivit" />
+        <activity android:name="kr.hmit.dmjs.ui.stockage_list.StockageListAdjustmentAddActivit" />
+        <activity android:name="kr.hmit.dmjs.ui.stockage_list.StockageListDetailActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.stockage_list.StockageListMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.find_employee.FindEmployeeActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.bulletin_board.BulletinBoardMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.bulletin_board.BulletinBoardAddActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.bulletin_board.BulletinBoardDetailActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.bulletin_board.BulletinBoardReplyActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.stockStatus.StockStatusFilterActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.stockStatus.StockStatusMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.stockStatus.InventoryHistoryMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.stockStatus.InventoryHistoryDetailActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.stockStatus.InventoryHistoryFilterActivity" />
+
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.NGM_ClientManagementAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.NGM_ClientManagementDetailActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.NGM_ClientManagementFilterActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.NGM_ClientManagementMainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.PurchaseMainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.PurchaseMultiAddProductUpdateActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.PurchaseMasterUpdateActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.PurchaseMainFilterActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.PurchaseMainAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.PurchaseMultiAddProductActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.PurchaseDetailActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.PurchaseScanInfoActivity"/>
+
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.AbaloneReleaseFilterActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.AbaloneReleaseMultiAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.AbaloneReleaseAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.AbaloneReleaseDetailActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.AbaloneReleaseMultiAddProductActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.PurchaseAbalone.ReleaseAbaloneMainActivity"/>
+
+        <activity android:name="kr.hmit.dmjs.ui.Cusomer.CustomerSaleMainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.Cusomer.CustomerSaleMainFilterActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.Cusomer.CustomerSaleMasterAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.Cusomer.CustomerSaleMasterUpdateActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.Cusomer.CustomerSaleDetailActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.Cusomer.CustomerSaleDetailAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.Cusomer.CustomerSaleDetailUpdateActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.Cusomer.ComplaintMainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.Cusomer.ComplaintDetailActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.Cusomer.ComplaintAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.Cusomer.Popups.MemberListActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.management_note.ManagementNoteMainActivity" />
+        <activity android:name="kr.hmit.dmjs.ui.management_note.ManagementNoteAddActivity" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:name="kr.hmit.dmjs.ui.management_note.ManagementNoteDetailActivity" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:name="kr.hmit.dmjs.ui.management_note.ManagementNoteFilterActivity" />
+
+        <activity android:name="kr.hmit.dmjs.ui.qr_scan.StockstatusDialogActivity" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:name="kr.hmit.dmjs.ui.qr_scan.StockstatusDialog2Activity" android:theme="@style/Theme.AppCompat.Dialog"/>
+        <activity android:name="kr.hmit.dmjs.ui.qr_scan.ShipmentManagementActivity"/>
+
+        <!-- 발주관리 -->
+        <activity android:name="kr.hmit.dmjs.ui.m004.Odm02MainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m004.Odm03MainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m004.Odm03MainFilterActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m004.Odm03MainAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m004.Odm03MainDetailActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m004.OdmScanMainActivity"/>
+
+        <!-- 가공전복 생산관리 -->
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot01MainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot01MainFilterActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot01MainAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot01MainDetailActivity"/>
+
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot02MainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot02MainDetailActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot02MainFilterActivity"/>
+
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot02SubAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot02SubDetailActivity"/>
+
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot03MainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot03MainFilterActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot03MainAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot03MainDetailActivity"/>
+
+        <activity android:name="kr.hmit.dmjs.ui.m005.Lot04MainActivity"/>
+
+
+        <!-- 활전복생산관리 -->
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag01MainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag01MainFilterActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag01MainAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag01MainDetailActivity"/>
+
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag02MainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag02MainDetailActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag02MainFilterActivity"/>
+
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag02SubAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag02SubDetailActivity"/>
+
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag03MainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag03MainFilterActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag03MainAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag03MainDetailActivity"/>
+
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag04MainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m017.Zag05ScanActivity"/>
+
+        <!--팝업-->
+        <activity android:name="kr.hmit.dmjs.ui.popup.dah.DahFindActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.popup.run.RunFindActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.popup.run.RunFindFilterActivity"/>
+
+        <!--수조온도-->
+        <activity android:name="kr.hmit.dmjs.ui.m020.Temp01MainActivity"/>
+
+        <!--수매관리-->
+        <activity android:name="kr.hmit.dmjs.ui.m010.Ngm04MainActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m010.Ngm04MainDetailActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m010.Ngm04MainFilterActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m010.Ngm04MainAddActivity"/>
+        <activity android:name="kr.hmit.dmjs.ui.m010.Ngm04MainUpdateActivity"/>
+
+        <activity android:name="kr.hmit.dmjs.ui.m010.Ngm05MainActivity"/>
+
+        <activity android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation"/>
+        <activity android:name="kr.hmit.dmjs.ui.main.MainDashboardActivity" />
+        <activity
+            android:name="kr.hmit.dmjs.ui.intro.IntroActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="hmit"
+                    android:scheme="dmjs_refac" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="kr.hmit.dmjs.ui.menu.MenuActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="kr.hmit.dmjs.ui.qr_scan.ScanQR"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="kr.hmit.dmjs.ui.main.MainActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="kr.hmit.dmjs.ui.login.LoginActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <uses-library android:name="device.sdk" android:required="false" />
+    </application>
+
+</manifest>

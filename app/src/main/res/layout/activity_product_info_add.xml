@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.product_info.AddProductInfoActivity">
+
+    <!-- region header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/BaseHeader"
+            android:text="제품정보 신규작성"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgWriteWork"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:src="@drawable/edit"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#9e9e9e"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- endregion -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#f2f5f8"
+        android:paddingBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/shape_round10_white"
+            android:elevation="3dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvTextItem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="품명"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/etProductName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/etProductName" />
+
+            <EditText
+                android:id="@+id/etProductName"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_round5_border1"
+                android:hint="품명을 입력하세요."
+                android:maxLength="50"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:singleLine="true"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/barrier"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--region 자재구분-->
+
+            <TextView
+                android:id="@+id/tvTextItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="자재구분"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/etMaterialClassification"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/etMaterialClassification" />
+
+            <TextView
+                android:id="@+id/etMaterialClassification"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_round5_border1"
+                android:drawableEnd="@drawable/dropdown"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp"
+                android:text="원재료"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/barrier"
+                app:layout_constraintTop_toBottomOf="@id/etProductClassification" />
+
+            <!--endregion 자재구분-->
+            <TextView
+                android:id="@+id/tvTextItem3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="규격"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/etStandard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/etStandard" />
+
+            <EditText
+                android:id="@+id/etStandard"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_round5_border1"
+                android:hint="규격을 입력하세요."
+                android:maxLength="50"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:singleLine="true"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/barrier"
+                app:layout_constraintTop_toBottomOf="@id/etMaterialClassification" />
+
+            <TextView
+                android:id="@+id/tvTextItem4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="단위"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/etUnit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/etUnit" />
+
+            <TextView
+                android:id="@+id/etUnit"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_round5_border1"
+                android:drawableEnd="@drawable/dropdown"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp"
+                android:text="단위"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/barrier"
+                app:layout_constraintTop_toBottomOf="@id/etProductName" />
+
+            <!--region 제품분류-->
+
+            <TextView
+                android:id="@+id/tvTextItem5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="제품분류"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/etProductClassification"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/etProductClassification" />
+
+            <TextView
+                android:id="@+id/etProductClassification"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_round5_border1"
+                android:drawableEnd="@drawable/dropdown"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp"
+                android:text="제품분류"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/barrier"
+                app:layout_constraintTop_toBottomOf="@+id/etUnit" />
+
+            <!--endregion 제품분류-->
+
+
+
+
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="tvTextItem1,tvTextItem2" />
+            <TextView
+                android:id="@+id/tvTextItem6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="과세구분"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/radioGroup1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/radioGroup1" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:checkedButton="@+id/taxationBtn"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/barrier"
+                app:layout_constraintTop_toBottomOf="@+id/etBasicUnitPrice">
+
+                <RadioButton
+                    android:id="@+id/taxationBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="과세"
+                    android:textColor="#616161" />
+
+                <RadioButton
+                    android:id="@+id/nonTaxableBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="비과세"
+                    android:textColor="#616161" />
+            </RadioGroup>
+            <TextView
+                android:id="@+id/tvTextItem7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="생산방식"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/radioGroup2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/radioGroup2" />
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:checkedButton="@+id/nonProductionBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/barrier"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup1">
+
+                <RadioButton
+                    android:id="@+id/nonProductionBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="해당없음"
+                    android:textColor="#616161" />
+
+                <RadioButton
+                    android:id="@+id/directProductionBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="직접생산"
+                    android:textColor="#616161" />
+
+                <RadioButton
+                    android:id="@+id/OEMProductionBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="OEM생산"
+                    android:textColor="#616161" />
+            </RadioGroup>
+            <TextView
+                android:id="@+id/tvTextItem8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="친환경"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/radioGroup3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/radioGroup3" />
+            <RadioGroup
+                android:id="@+id/radioGroup3"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:checkedButton="@+id/generalBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/barrier"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup2">
+
+                <RadioButton
+                    android:id="@+id/generalBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="일반"
+                    android:textColor="#616161" />
+
+                <RadioButton
+                    android:id="@+id/pesticideFreeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="무농약"
+                    android:textColor="#616161" />
+
+                <RadioButton
+                    android:id="@+id/organicFarmingBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="유기농"
+                    android:textColor="#616161" />
+            </RadioGroup>
+            <TextView
+                android:id="@+id/tvTextItem9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center_vertical"
+                android:text="기본단가"
+                android:textColor="#616161"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/etBasicUnitPrice"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/etBasicUnitPrice" />
+
+            <EditText
+                android:id="@+id/etBasicUnitPrice"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_round5_border1"
+                android:hint="기본단가를 입력하세요."
+                android:inputType="number"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:singleLine="true"
+                android:textColor="#616161"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/barrier"
+                app:layout_constraintTop_toBottomOf="@+id/etStandard" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            style="@style/BaseButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/common_save"
+            app:layout_constraintTop_toBottomOf="@+id/layoutInput" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

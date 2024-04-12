@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/shape_round10_white"
+    android:elevation="1dp"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/ngo06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNgo06"
+        app:layout_constraintStart_toEndOf="@+id/tvNgo06"
+        app:layout_constraintTop_toTopOf="@+id/tvNgo06"
+        tools:text="NGO_06" />
+
+    <TextView
+        android:id="@+id/tvNgo06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:letterSpacing="0"
+        android:text="출고중량"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvNgo04Nm"
+        app:layout_constraintTop_toBottomOf="@+id/tvNgo04Nm"
+        tools:ignore="HardcodedText,SpUsage"
+        tools:lineHeight="13sp" />
+
+    <TextView
+        android:id="@+id/ngo04Nm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNgo04Nm"
+        app:layout_constraintStart_toEndOf="@+id/tvNgo04Nm"
+        app:layout_constraintTop_toTopOf="@+id/tvNgo04Nm"
+        tools:text="NGO_04_NM" />
+
+    <TextView
+        android:id="@+id/tvNgo04Nm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:letterSpacing="-0.09"
+        android:text="품명/품번"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvNgo09"
+        app:layout_constraintTop_toBottomOf="@+id/tvNgo09"
+        tools:ignore="HardcodedText,SpUsage"
+        tools:lineHeight="13sp" />
+
+    <TextView
+        android:id="@+id/tvNgg03Nm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:letterSpacing="0.08"
+        android:text="수 매 처"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvNgg02"
+        app:layout_constraintTop_toBottomOf="@+id/tvNgg02"
+        tools:ignore="HardcodedText,SpUsage"
+        tools:lineHeight="13sp" />
+
+    <TextView
+        android:id="@+id/ngg03Nm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNgg03Nm"
+        app:layout_constraintStart_toEndOf="@+id/tvNgg03Nm"
+        app:layout_constraintTop_toTopOf="@+id/tvNgg03Nm"
+        tools:text="NGG_03_NM" />
+
+    <TextView
+        android:id="@+id/tvNgo09"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:letterSpacing="0"
+        android:text="수매번호"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tvNgo80"
+        app:layout_constraintTop_toBottomOf="@+id/tvNgo80"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/ngo09"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:letterSpacing="0"
+        android:textColor="#616161"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNgo09"
+        app:layout_constraintStart_toEndOf="@+id/tvNgo09"
+        app:layout_constraintTop_toTopOf="@+id/tvNgo09"
+        tools:text="NGO_09" />
+
+    <TextView
+        android:id="@+id/ngg02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNgg02"
+        app:layout_constraintStart_toEndOf="@+id/tvNgg02"
+        app:layout_constraintTop_toTopOf="@+id/tvNgg02"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="NGG_02" />
+
+    <TextView
+        android:id="@+id/tvNgg02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:text="수매일자"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/tvNgo80"
+        app:layout_constraintTop_toTopOf="@+id/tvNgo80"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/tvNgo80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:text="일련번호"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:id="@+id/ngo80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNgo80"
+        app:layout_constraintStart_toEndOf="@+id/tvNgo80"
+        app:layout_constraintTop_toTopOf="@+id/tvNgo80"
+        tools:text="NGO_80" />
+</androidx.constraintlayout.widget.ConstraintLayout>

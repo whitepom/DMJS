@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainActivity">
+
+    <kr.hmit.base.base_view_pager.BaseViewPager
+        android:id="@+id/viewPagerMain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#f5f5f5"
+        app:layout_constraintBottom_toTopOf="@+id/line1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/line1"
+        style="@style/BaseLine"
+        app:layout_constraintBottom_toTopOf="@+id/layoutFooter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewPagerMain" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutFooter"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#fafafa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line1">
+
+        <ImageView
+            android:id="@+id/imgMenu1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:src="@drawable/main_menu3"
+            app:layout_constraintEnd_toStartOf="@+id/imgMenu2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgMenu2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:src="@drawable/main_menu1"
+            app:layout_constraintEnd_toStartOf="@+id/imgMenu3"
+            app:layout_constraintStart_toEndOf="@+id/imgMenu1" />
+
+        <ImageView
+            android:id="@+id/imgMenu3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:src="@drawable/main_menu4"
+            app:layout_constraintEnd_toStartOf="@+id/imgMenu4"
+            app:layout_constraintStart_toEndOf="@+id/imgMenu2" />
+
+        <ImageView
+            android:id="@+id/imgMenu4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:src="@drawable/qr"
+            app:layout_constraintEnd_toStartOf="@+id/imgMenu5"
+            app:layout_constraintStart_toEndOf="@+id/imgMenu3" />
+
+        <ImageView
+            android:id="@+id/imgMenu5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:src="@drawable/camera"
+            app:layout_constraintEnd_toStartOf="@+id/imgMenu6"
+            app:layout_constraintStart_toEndOf="@+id/imgMenu4" />
+
+        <ImageView
+            android:id="@+id/imgMenu6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:src="@drawable/main_menu2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgMenu5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
