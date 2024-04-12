@@ -81,7 +81,7 @@
                     android:textSize="14sp"
                     android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="@+id/nggk07"
-                    app:layout_constraintStart_toEndOf="@+id/nggk04"
+                    app:layout_constraintStart_toEndOf="@+id/AllNggk04"
                     app:layout_constraintTop_toTopOf="@+id/nggk07"
                     app:layout_constraintVertical_bias="0.50" />
 
@@ -94,12 +94,12 @@
                     android:text="일괄적용"
                     android:textSize="14sp"
                     android:textStyle="normal"
-                    app:layout_constraintBottom_toBottomOf="@+id/nggk04"
-                    app:layout_constraintStart_toEndOf="@+id/nggk04"
-                    app:layout_constraintTop_toTopOf="@+id/nggk04" />
+                    app:layout_constraintBottom_toBottomOf="@+id/AllNggk04"
+                    app:layout_constraintStart_toEndOf="@+id/AllNggk04"
+                    app:layout_constraintTop_toTopOf="@+id/AllNggk04" />
 
                 <EditText
-                    android:id="@+id/nggk04"
+                    android:id="@+id/AllNggk04"
                     android:layout_width="70dp"
                     android:layout_height="25dp"
                     android:layout_marginStart="5dp"

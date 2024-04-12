@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
+    android:layout_marginStart="10dp"
     android:layout_marginTop="4dp"
     android:layout_marginEnd="10dp"
     android:layout_marginBottom="2dp"
@@ -15,19 +15,6 @@
     android:paddingEnd="5dp"
     android:paddingBottom="5dp">
 
-    <!--<TextView
-        android:id="@+id/tvConstruction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:textSize="16sp"
-        android:textColor="#7daebf"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintBottom_toBottomOf="@+id/tvOrderNumber"
-        app:layout_constraintTop_toTopOf="@+id/tvOrderNumber"
-        tools:text="/ 공사명" />-->
-
     <TextView
         android:id="@+id/nggk08"
         android:layout_width="0dp"
@@ -37,26 +24,26 @@
 
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvNggk02"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNggk2"
         app:layout_constraintStart_toEndOf="@+id/tvNggk2"
-        app:layout_constraintTop_toTopOf="@+id/tvNggk02"
-        tools:text="수조 12" />
+        app:layout_constraintTop_toTopOf="@+id/tvNggk2"
+        tools:text="미투입" />
 
     <TextView
         android:id="@+id/tvNggk2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="70dp"
         android:ellipsize="end"
         android:maxLines="1"
-        android:text="사용 :"
+        android:text="사용여부 :"
         android:textColor="#4574be"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/tvNggk"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/tvNggk"
+        app:layout_constraintStart_toStartOf="@+id/nggk07"
+        app:layout_constraintTop_toTopOf="@+id/tvNggk" />
 
     <TextView
         android:id="@+id/nggk07"
@@ -67,16 +54,15 @@
 
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvNggk02"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNggk"
         app:layout_constraintStart_toEndOf="@+id/tvNggk"
-        app:layout_constraintTop_toTopOf="@+id/tvNggk02"
+        app:layout_constraintTop_toTopOf="@+id/tvNggk"
         tools:text="수조 12" />
 
     <TextView
         android:id="@+id/tvNggk"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
 
         android:layout_marginTop="5dp"
         android:ellipsize="end"
@@ -85,14 +71,13 @@
         android:textColor="#4574be"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/tvNggk02"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/tvNggk02"
+        app:layout_constraintTop_toBottomOf="@+id/tvNggk02" />
 
     <TextView
         android:id="@+id/nggk02"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
         android:gravity="end"
         android:textColor="#616161"
 
@@ -122,35 +107,22 @@
 
     <EditText
         android:id="@+id/nggk04"
-        android:layout_width="80dp"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="4dp"
         android:gravity="center_vertical|right"
         android:inputType="number|numberDecimal"
-        android:paddingTop="2dp"
-        android:paddingBottom="7dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:selectAllOnFocus="true"
         android:textColor="#7daebf"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/nggk02"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/nggk02"
-        tools:text="입고중량" />
-
-    <!-- <TextView
-        android:id="@+id/tvStandards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#9e9e9e"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        android:layout_marginStart="5dp"
-        app:layout_constraintStart_toEndOf="@+id/tvProductNumber"
-        app:layout_constraintTop_toTopOf="@+id/tvProductNumber"
-        app:layout_constraintBottom_toBottomOf="@+id/tvProductNumber"
-
-        tools:text="(100*200*300)" />-->
-
+        app:layout_constraintVertical_bias="0.547"
+        tools:text="중량" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

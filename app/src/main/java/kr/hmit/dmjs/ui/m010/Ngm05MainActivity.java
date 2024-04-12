@@ -128,7 +128,7 @@ public class Ngm05MainActivity extends BaseActivity {
 
 
         binding.addNggk04.setOnClickListener(this::onClickBatchNggk04);
-        binding.nggk04.setText("0");
+        binding.AllNggk04.setText("0");
 
         binding.addNggk07.setOnClickListener(v -> onClickCombo((View) v , items , "1"));
 
@@ -270,7 +270,7 @@ public class Ngm05MainActivity extends BaseActivity {
     private void onClickBatchNggk04(View view){
 
         for (int i = 0; i < mList.size(); i++) {
-            mAdapter.SetAll(Double.parseDouble(binding.nggk04.getText().toString()));
+            mAdapter.SetAll(Double.parseDouble(binding.AllNggk04.getText().toString()));
         }
     }
 
@@ -371,7 +371,7 @@ public class Ngm05MainActivity extends BaseActivity {
 
                         if(!mDecodeResult.toString().contains("READ_FAIL")){
                             //스캔 데이터 저정
-                            binding.nggk04.setText("0");
+                            binding.AllNggk04.setText("0");
                             binding.nggk07.setText("");
                             NGG_Read(mDecodeResult.toString());
                         }

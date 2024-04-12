@@ -7,7 +7,7 @@ public class NGGK_VO implements Serializable{
     //회사코드
     public String NGGK_ID;
     public String NGGK_01;
-    public String NGGK_02;
+    public int NGGK_02;
     public String NGGK_03;
 
     public double NGGK_04;
