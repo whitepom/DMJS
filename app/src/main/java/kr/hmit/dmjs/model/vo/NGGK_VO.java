@@ -11,9 +11,12 @@ public class NGGK_VO implements Serializable{
     public String NGGK_03;
 
     public double NGGK_04;
+    public double BF_NGGK_04;
     public String NGGK_05;
     public String NGGK_06;
     public String NGGK_07;
+
+    public String BF_NGGK_07;
     public String NGGK_08;
     public String NGGK_09;
 

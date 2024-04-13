@@ -62,7 +62,7 @@ public class PurchaseScanInfoActivity extends BaseActivity {
 
     private ActivityPurchaseScanInfoBinding binding;
 
-    String[] items = {"수조 1", "수조 2", "수조 3", "수조 4", "수조 5", "수조 6", "수조 7", "수조 8", "수조 9", "수조 10", "수조 11", "수조 12"};
+    String[] items = {"-선택-", "수조 1", "수조 2", "수조 3", "수조 4", "수조 5", "수조 6", "수조 7", "수조 8", "수조 9", "수조 10", "수조 11", "수조 12"};
     private HashMap<String, String> map = new HashMap<String,String>();
 
     private HashMap<String, Object> paramMap = new HashMap<String, Object>();
@@ -116,7 +116,9 @@ public class PurchaseScanInfoActivity extends BaseActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //strNggk07.setText(items[position]);
+                strNggk07= items[position];
+
+                System.out.println(strNggk07);
             }
 
             @Override
@@ -161,7 +163,11 @@ public class PurchaseScanInfoActivity extends BaseActivity {
                 try {
                     if (ScanConst.INTENT_USERMSG.equals(intent.getAction())) {
                         mScanner.aDecodeGetResult(mDecodeResult.recycle());
-                        fnSelect(mDecodeResult.toString());
+
+                        if(!mDecodeResult.toString().contains("READ_FAIL")){
+                            //스캔 데이터 저정
+                            fnSelect(mDecodeResult.toString());
+                        }
                     } else if (ScanConst.INTENT_EVENT.equals(intent.getAction())) {
                         boolean result = intent.getBooleanExtra(ScanConst.EXTRA_EVENT_DECODE_RESULT, false);
                         int decodeBytesLength = intent.getIntExtra(ScanConst.EXTRA_EVENT_DECODE_LENGTH, 0);
@@ -337,17 +343,19 @@ public class PurchaseScanInfoActivity extends BaseActivity {
         nggk_vo = (NGGK_VO)data.get(0);
 
         binding.nggk01.setText(nggk_vo.NGGK_01);
-        binding.nggk02.setText(nggk_vo.NGGK_02);
+        binding.nggk02.setText(String.valueOf(nggk_vo.NGGK_02));
         binding.ngg02.setText(nggk_vo.NGG_02);
         binding.ngg03Nm.setText(nggk_vo.NGG_03_NM);
         binding.ngg04Nm.setText(nggk_vo.NGG_04_NM);
         binding.ngg03.setText(nggk_vo.NGG_03);
         binding.nggk03.setText(nggk_vo.NGGK_03);
-        binding.nggk04.setText(String.valueOf(nggk_vo.NGGK_04));
+        binding.nggk04.setText("0");
+        binding.bfNggk04.setText(String.valueOf(nggk_vo.BF_NGGK_04));
+        binding.bfNggk07.setText(nggk_vo.BF_NGGK_07);
 
-        strNggk07 = nggk_vo.NGGK_07;
+        //strNggk07 = nggk_vo.NGGK_07;
 
-        int index = 0 ;
+        //int index = 0 ;
 
         // Iterator 사용 3 - entrySet() : key / value
         //for(map.Entry<String, String> elem : map.entrySet()){
@@ -372,6 +380,7 @@ public class PurchaseScanInfoActivity extends BaseActivity {
         map.put("010", "수조 10");
         map.put("011", "수조 11");
         map.put("012", "수조 12");
+        map.put("999", "-선택-");
     }
 
     public void NGGK_U() {
@@ -382,7 +391,7 @@ public class PurchaseScanInfoActivity extends BaseActivity {
 
         openLoadingBar();
 
-        paramMap = setParamMap("NGGK_ID", "M_UPDATE");
+        paramMap = setParamMap("NGGK_ID", "M_UPDATE_C");
 
         paramMap.put("NGGK_01", binding.nggk01.getText());
         paramMap.put("NGGK_02", binding.nggk02.getText());
