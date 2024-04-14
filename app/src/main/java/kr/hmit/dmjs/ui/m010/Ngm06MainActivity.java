@@ -10,11 +10,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
-
+import android.os.Message;
 import android.util.Log;
-import android.webkit.WebSettings;
-import android.webkit.WebViewClient;
-import android.webkit.JavascriptInterface;
+import android.view.View;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,16 +24,23 @@ import device.common.DecodeStateCallback;
 import device.common.ScanConst;
 import device.sdk.ScanManager;
 import kr.hmit.base.base_activity.BaseActivity;
-
+import kr.hmit.base.base_alret.BaseAlert;
+import kr.hmit.base.network.BaseConst;
+import kr.hmit.base.network.ClsNetworkCheck;
+import kr.hmit.base.network.HttpBaseService;
 import kr.hmit.dmjs.R;
-
-import kr.hmit.dmjs.databinding.ActivityNgm05MainBinding;
+import kr.hmit.dmjs.databinding.ActivityNgm06MainBinding;
 import kr.hmit.dmjs.model.vo.NGGK_VO;
-
+import kr.hmit.dmjs.model.vo.NGG_VO;
+import kr.hmit.dmjs.network.Http_Ngg;
+import kr.hmit.dmjs.network.Http_Nggk;
 import kr.hmit.dmjs.ui.m010.adapter.Ngm05MainListAdapter;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
-public class Ngm05MainActivity extends BaseActivity {
+public class Ngm06MainActivity extends BaseActivity {
 
     public static final int REQUEST_CODE = 9000;
     public static final String GAG_INFO = "NGG_05";
@@ -43,12 +50,12 @@ public class Ngm05MainActivity extends BaseActivity {
     private static DecodeResult mDecodeResult;
     private int mBackupResultType = ScanConst.ResultType.DCD_RESULT_COPYPASTE;
     private final Handler mHandler = new Handler();
-    private static Ngm05MainActivity.ScanResultReceiver mScanResultReceiver = null;
+    private static Ngm06MainActivity.ScanResultReceiver mScanResultReceiver = null;
     private AlertDialog mDialog = null;
     private ProgressDialog mWaitDialog = null;
 
 
-    private ActivityNgm05MainBinding binding;
+    private ActivityNgm06MainBinding binding;
     private Ngm05MainListAdapter mAdapter;
     private ArrayList<NGGK_VO> mList;
 
@@ -59,13 +66,13 @@ public class Ngm05MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityNgm05MainBinding.inflate(getLayoutInflater());
+        binding = ActivityNgm06MainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         mContext = this;
         mScanner = new ScanManager();
         mDecodeResult = new DecodeResult();
-        mScanResultReceiver = new Ngm05MainActivity.ScanResultReceiver();
+        mScanResultReceiver = new Ngm06MainActivity.ScanResultReceiver();
 
         //auto 스캔해제
         mScanner.aDecodeSetTriggerMode(ScanConst.TriggerMode.DCD_TRIGGER_MODE_ONESHOT);
@@ -99,28 +106,226 @@ public class Ngm05MainActivity extends BaseActivity {
     @Override
     protected void initialize() {
         binding.imgBack.setOnClickListener(v -> finish());
-        binding.webView.loadUrl("http://dm.smfactory.kr/Z04012/Z04012CMobile/TEST_L");
+        binding.btnSave.setOnClickListener(this::onClickSave);
 
-        binding.webView.getSettings().setJavaScriptEnabled(true);
-        binding.webView.setWebViewClient(new WebViewClient());
-        binding.webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
-        binding.webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        binding.webView.getSettings().setLoadsImagesAutomatically(true);
-        binding.webView.getSettings().setUseWideViewPort(true);
-        binding.webView.getSettings().setSupportZoom(false);
-        binding.webView.getSettings().setSupportMultipleWindows(true);
-        binding.webView.getSettings().setAppCacheEnabled(true);
-        binding.webView.getSettings().setDomStorageEnabled(true);
-        binding.webView.getSettings().setAllowFileAccess(true);
-        binding.webView.getSettings().setGeolocationEnabled(true);
-        binding.webView.getSettings().setDefaultTextEncodingName("UTF-8");
 
+        binding.addNggk04.setOnClickListener(this::onClickBatchNggk04);
+        binding.AllNggk04.setText("0");
+
+        binding.addNggk07.setOnClickListener(v -> onClickCombo((View) v , items , "1"));
+
+
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false));
+
+        mAdapter = new Ngm05MainListAdapter();
+        binding.recyclerView.setAdapter(mAdapter);
     }
 
     @Override
     protected void initLayout() {
 
     }
+
+    private void onClickCombo(View v , String[] paramArry , String comboDiv) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        String title ="";
+
+        if(comboDiv.equals("1")){
+            title ="수조선택";
+        }
+
+        builder.setTitle(title).setCancelable(true)
+                .setItems(paramArry, (dialog, which) -> {
+                    setArry(which , comboDiv);
+
+                }).setCancelable(false).create();
+
+        builder.show();
+    }
+
+    private void setArry(int which , String comboDiv) {
+        if(comboDiv.equals("1")){
+            binding.nggk07.setText(items[which]);
+        }
+    }
+
+    private void NGG_Read(String NGG_01){
+
+        if (!ClsNetworkCheck.isConnectable(mContext)) {
+            BaseAlert.show(mContext, R.string.network_error_1);
+            return;
+        }
+
+        //기본파라미터
+        paramMap = setParamMap("NGG_ID", "M_SCAN_DETAIL");
+        paramMap.put("NGG_01",NGG_01);
+
+        openLoadingBar();
+
+        Http_Ngg.ngg(HttpBaseService.TYPE.GET, BaseConst.URL_HOST).NGG_Read(
+                BaseConst.URL_HOST,
+                paramMap
+        ).enqueue(new Callback<ArrayList<NGG_VO>>() {
+            @Override
+            public void onResponse(Call<ArrayList<NGG_VO>> call, Response<ArrayList<NGG_VO>> response) {
+                closeLoadingBar();
+                ArrayList<NGG_VO> data = response.body();
+
+                if (response.isSuccessful()) {
+                    if(data.size() > 0){
+                         NGG_DETAIL(data.get(0));
+                    }else{
+                        BaseAlert.show(mContext,"검색결과가 없습니다." );
+                    }
+                } else {
+                    BaseAlert.show(mContext, getString(R.string.network_error_2) + "-" + response.errorBody());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<NGG_VO>> call, Throwable t) {
+                closeLoadingBar();
+                BaseAlert.show(mContext, R.string.network_error_2);
+                t.printStackTrace();
+            }
+        });
+    }
+
+
+    public void NGG_DETAIL(NGG_VO ngg_vo){
+
+        binding.ngg01.setText(ngg_vo.NGG_01);
+        binding.ngg02.setText(ngg_vo.NGG_02);
+        binding.ngg03Nm.setText(ngg_vo.NGG_03_NM);
+        binding.ngg04Nm.setText(ngg_vo.NGG_04_NM);
+
+        NGGK_Read(ngg_vo.NGG_01);
+    }
+
+    private void NGGK_Read(String NGGK_01){
+
+        if (!ClsNetworkCheck.isConnectable(mContext)) {
+            BaseAlert.show(mContext, R.string.network_error_1);
+            return;
+        }
+
+        //기본파라미터
+        paramMap = setParamMap("NGGK_ID", "M_DETAIL_LIST");
+        paramMap.put("NGGK_06",NGGK_01);
+
+        openLoadingBar();
+
+        Http_Nggk.nggk(HttpBaseService.TYPE.GET, BaseConst.URL_HOST).NGGK_Read(
+                BaseConst.URL_HOST,
+                paramMap
+        ).enqueue(new Callback<ArrayList<NGGK_VO>>() {
+            @Override
+            public void onResponse(Call<ArrayList<NGGK_VO>> call, Response<ArrayList<NGGK_VO>> response) {
+                closeLoadingBar();
+                ArrayList<NGGK_VO> data = response.body();
+
+                if (response.isSuccessful()) {
+                    if(data.size() > 0){
+                        bindingData(data);
+                    }else{
+                        BaseAlert.show(mContext,"검색결과가 없습니다." );
+                    }
+                } else {
+                    BaseAlert.show(mContext, getString(R.string.network_error_2) + "-" + response.errorBody());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<NGGK_VO>> call, Throwable t) {
+                closeLoadingBar();
+                BaseAlert.show(mContext, R.string.network_error_2);
+                t.printStackTrace();
+            }
+        });
+    }
+
+    private void bindingData(ArrayList<NGGK_VO> data) {
+        mList = data;
+        mAdapter.setNggkList(data);
+    }
+
+    private void onClickBatchNggk04(View view){
+
+        for (int i = 0; i < mList.size(); i++) {
+            mAdapter.SetAll(Double.parseDouble(binding.AllNggk04.getText().toString()));
+        }
+    }
+
+    private void onClickSave(View view) {
+
+        ArrayList<NGGK_VO> mListCheck = mAdapter.getCheckList();
+
+        if(mListCheck.size()>0) {
+
+            for (int i = 0; i < mListCheck.size(); i++) {
+                NGGK_U(mListCheck.get(i), true);
+            }
+
+            toast("수매 입고처리 되었습니다.");
+            NGGK_Read(binding.ngg01.getText().toString());
+
+        }else{
+            toast("입고처리할 주문이 없습니다.");
+        }
+    }
+
+    public void NGGK_U(NGGK_VO vo,boolean refreshFlag) {
+        if (!ClsNetworkCheck.isConnectable(mContext)) {
+            BaseAlert.show(mContext, R.string.network_error_1);
+            return;
+        }
+
+        openLoadingBar();
+
+        paramMap = setParamMap("NGGK_ID", "M_UPDATE_TEST");
+
+        paramMap.put("NGGK_01", vo.NGGK_01);
+        paramMap.put("NGGK_02", vo.NGGK_02);
+        paramMap.put("NGGK_03", vo.NGGK_03);
+        paramMap.put("NGGK_04", vo.NGGK_04);
+        paramMap.put("NGGK_05", vo.NGGK_05);
+        paramMap.put("NGGK_06", vo.NGGK_06);
+        paramMap.put("NGGK_07", binding.nggk07.getText().toString());
+        paramMap.put("NGGK_08", vo.NGGK_08);
+        paramMap.put("NGGK_09", vo.NGGK_09);
+        paramMap.put("NGGK_10", vo.NGGK_10);
+        paramMap.put("NGGK_11", vo.NGGK_11);
+
+        Http_Nggk.nggk(HttpBaseService.TYPE.POST, BaseConst.URL_HOST).NGGK_U(
+                BaseConst.URL_HOST,
+                paramMap
+        ).enqueue(new Callback<NGGK_VO>() {
+            @SuppressLint("HandlerLeak")
+            @Override
+            public void onResponse(Call<NGGK_VO> call, Response<NGGK_VO> response) {
+                Message msg = new Message();
+                msg.obj = response;
+                msg.what = 100;
+
+                new Handler() {
+                    @Override
+                    public void handleMessage(Message msg) {
+                        closeLoadingBar();
+                        if(refreshFlag){
+
+                        }
+                    }
+                }.sendMessage(msg);
+            }
+
+            @Override
+            public void onFailure(Call<NGGK_VO> call, Throwable t) {
+                call.cancel();
+                closeLoadingBar();
+            }
+        });
+    }
+
 
     //스캐너 관련함수
     private Runnable mStartOnResume = new Runnable() {
@@ -147,8 +352,10 @@ public class Ngm05MainActivity extends BaseActivity {
                         mScanner.aDecodeGetResult(mDecodeResult.recycle());
 
                         if(!mDecodeResult.toString().contains("READ_FAIL")){
-                            binding.webView.loadUrl("javascript:fnTest('"+mDecodeResult.toString()+"')");
-
+                            //스캔 데이터 저정
+                            binding.AllNggk04.setText("0");
+                            binding.nggk07.setText("");
+                            NGG_Read(mDecodeResult.toString());
                         }
                     } else if (ScanConst.INTENT_EVENT.equals(intent.getAction())) {
                         boolean result = intent.getBooleanExtra(ScanConst.EXTRA_EVENT_DECODE_RESULT, false);

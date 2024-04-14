@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.worker_code.AddWorkerCodeActivity"
+    tools:ignore="SpUsage">
+
+    <!-- region header -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:src="@drawable/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/BaseHeader"
+            android:text="활전복 입고일괄 등록"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#9e9e9e"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- endregion -->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f5f8"
+            android:paddingBottom="24dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutOptions"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@+id/layoutInput2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/layoutInput2"
+                app:layout_constraintTop_toBottomOf="@+id/layoutInput2">
+
+                <Button
+                    android:id="@+id/addNggk07"
+                    style="@style/BaseButton"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="5dp"
+                    android:text="수조검색"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/nggk07"
+                    app:layout_constraintStart_toEndOf="@+id/AllNggk04"
+                    app:layout_constraintTop_toTopOf="@+id/nggk07"
+                    app:layout_constraintVertical_bias="0.50" />
+
+                <Button
+                    android:id="@+id/addNggk04"
+                    style="@style/BaseButton"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="5dp"
+                    android:text="일괄적용"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/AllNggk04"
+                    app:layout_constraintStart_toEndOf="@+id/AllNggk04"
+                    app:layout_constraintTop_toTopOf="@+id/AllNggk04" />
+
+                <EditText
+                    android:id="@+id/AllNggk04"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:maxLength="500"
+                    android:maxLines="10"
+                    android:minHeight="36dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:singleLine="true"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvWarehouse2"
+                    app:layout_constraintStart_toEndOf="@+id/tvWarehouse2"
+                    app:layout_constraintTop_toTopOf="@+id/tvWarehouse2" />
+
+                <TextView
+                    android:id="@+id/tvWarehouse2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="중량"
+                    android:textColor="#616161"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    tools:layout_editor_absoluteX="68dp" />
+
+                <Button
+                    android:id="@+id/btnSave"
+                    style="@style/BaseButton"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="#43A33D"
+                    android:text="일괄처리"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/addNggk04"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/addNggk04" />
+
+                <TextView
+                    android:id="@+id/tvWarehouse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:text="수조"
+                    android:textColor="#616161"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWarehouse2" />
+
+                <TextView
+                    android:id="@+id/nggk07"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/shape_round5_border1"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvWarehouse"
+                    app:layout_constraintStart_toEndOf="@+id/tvWarehouse"
+                    app:layout_constraintTop_toTopOf="@+id/tvWarehouse"
+                    tools:text=" " />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutInput"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/shape_round10_white"
+                android:elevation="3dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutOptions">
+
+
+                <TextView
+                    android:id="@+id/tvTextOptional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:text="활전복 입고목록"
+                    android:textColor="#4574be"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="8dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTextOptional"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:listitem="@layout/item_ngm05_main_list" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutInput2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape_round10_white"
+                android:elevation="3dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/ngg03Nm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvNgg04Nm"
+                    app:layout_constraintStart_toStartOf="@+id/ngg01"
+                    app:layout_constraintTop_toTopOf="@+id/tvNgg04Nm"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:text="NGG_03" />
+
+                <TextView
+                    android:id="@+id/tvNgg04Nm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:letterSpacing="-0.01"
+                    android:text="수  매  처"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvNgg01"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNgg01"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+                <TextView
+                    android:id="@+id/ngg04Nm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:letterSpacing="0"
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvNgm03"
+                    app:layout_constraintStart_toEndOf="@+id/tvNgm03"
+                    app:layout_constraintTop_toTopOf="@+id/tvNgm03"
+                    tools:text="NGG_04" />
+
+                <TextView
+                    android:id="@+id/tvNgm03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:letterSpacing="0.08"
+                    android:text="제 품 명"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvNgg02"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNgg02"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+                <TextView
+                    android:id="@+id/ngg01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvNgg01"
+                    app:layout_constraintStart_toEndOf="@+id/tvNgg01"
+                    app:layout_constraintTop_toTopOf="@+id/tvNgg01"
+                    app:layout_constraintVertical_bias="0.50"
+                    tools:text="NGG_01" />
+
+                <TextView
+                    android:id="@+id/tvNgg01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:text="수매번호"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/tvNgg02"
+                    app:layout_constraintTop_toTopOf="@+id/tvNgg02"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+                <TextView
+                    android:id="@+id/ngg02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvNgg02"
+                    app:layout_constraintStart_toEndOf="@+id/tvNgg02"
+                    app:layout_constraintTop_toTopOf="@+id/tvNgg02"
+                    tools:text="NGG_02" />
+
+                <TextView
+                    android:id="@+id/tvNgg02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="수매일자"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText,SpUsage" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
